@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt">
+    
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="tentando_Fazer_Um_Site_Pt5"/>
+    <meta name="keywords" content="trabalho_De_Pwi"/>
+    <meta name="author" content="Roberto Dantas"/>
+    <link rel="stylesheet" href="../Css/style.css">
+    <script type="text/javascript" src="../Js/script.js"></script>
+    <title>Quiz</title>
+</head>
+
+<body>
+    <nav id="menu">
+        <img src="../Img/logo.png" alt="">
+        <p><a href="" id="palavraQuiz">QUIZ</a></p>
+    </nav>
+    <div id="espaco"></div>
+    <div id="conteudo">
+        <div id="pontuacao">
+            <table>
+                <tr id="linhaPontucao">
+                    <th id="p1"></th>
+                    <th id="p2"></th>
+                    <th id="p3"></th>
+                    <th id="p4"></th>
+                    <th id="p5"></th>
+                    <th id="p6"></th>
+                    <th id="p7"></th>
+                    <th id="p8"></th>
+                    <th id="p9"></th>
+                    <th id="p10"></th>
+                </tr>
+            </table>
+        </div>
+        </br>
+    <div id="conteudoEscrito">
+    <div class="titulo" id="titulo">
+        <h2>Você conhece muitos</br>Filmes e Séries?</h2>
+    </div>
+    </br></br>
+    <button onclick="botaoMenu()" id="clique">Faça  o Teste</button>
+        <div id="opcoes">
+            <h2 id="tituloOpcoes">Escolha uma das</br>categorias a seguir:</h2>            
+            <ul>
+                <li id="tema1"><button onclick="acaoQuiz()"><p>AÇÃO</p></button></li>
+                <li id="tema2"><button onclick="animacaoQuiz()"><p>ANIMAÇÃO</p></button></li>
+                <li id="tema3"><button onclick="aventuraQuiz()"><p>AVENTURA</p></button></li>
+                
+                <li id="tema4"><button onclick="comediaQuiz()"><p>COMÉDIA</p></button></li>
+                <li id="tema5"><button onclick="ficcaoQuiz()"><p>FICÇÃO</p></button></li>
+                <li id="tema6"><button onclick="romanceQuiz()"><p>ROMANCE</p></button></li>
+                
+                <li id="tema7"><button onclick="suspenseQuiz()"><p>SUSPENSE</p></button></li>
+                <li id="tema8"><button onclick="terrorQuiz()"><p>TERROR</p></button></li>
+                <li id="tema9"><button onclick="thrillerQuiz()"><p>THRILLER</p></button></li>
+            </ul>
+        </div>
+        <div id="escolhida">
+            <img src="../Img/voltar.png" alt="" onclick="voltar()" id="botao2">
+            </br>
+            <h2 id="qualEscolheu"></h2>
+            </br></br>
+            <p id="explicacaoQuiz">Deseja iniciar o Quiz?</p>
+            </br></br>
+            <button onclick="iniciar()" id="botao1">Iniciar</button>
+        </div>
+        <div id="parteQuiz">
+            <div class="divPerguntaTexto">
+                <p id="perguntaTexto"></p>
+           </div>
+           
+           <div class="alternativas">
+               <table>
+                   <tr>
+                       <th class="check"><input type="checkbox" id="box1"></th>
+                       <th class="alter" id="simAlternativa1" onclick="alterna1()"><p id="alternativa1"></p></th>
+                   </tr>
+                   <tr>
+                       <th class="check"><input type="checkbox" id="box2"></th>
+                       <th class="alter" id="simAlternativa2" onclick="alterna2()"><p id="alternativa2"></p></th>
+                   </tr>
+                   <tr>
+                       <th class="check"><input type="checkbox" id="box3"></th>
+                       <th class="alter" id="simAlternativa3" onclick="alterna3()"><p id="alternativa3"></p></th>
+                   </tr>
+                   <th class="check"><input type="checkbox" id="box4"></th>
+                       <th class="alter" id="simAlternativa4" onclick="alterna4()"><p id="alternativa4"></p></th>
+                   </tr>
+                   <tr>
+                       <th class="check"><input type="checkbox" id="box5"></th>
+                       <th class="alter" id="simAlternativa5" onclick="alterna5()"><p id="alternativa5"></p></th>
+                   </tr>
+                   
+               </table>
+           </div>
+           </br>
+           <div class="caixaBotaoProxima">
+               <button id="botaoProxima" onclick="validacao()" type="submit">Próxima</button>
+           </div>
+        </div>
+    </div>
+    </div>
+    
+     <div id="espaco2"></div>
+    <footer></footer>
+    
+</body>
+</html>
