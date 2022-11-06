@@ -49,7 +49,7 @@ body{
 #conteudo{
     height: 600px;
     background-size: cover;
-    background-image: url('../Img/fundo.jpeg');
+    background-image: url('fundo.jpeg');
     background-repeat: no-repeat;
     padding-top: 10%;
     box-shadow: 2px 2px 50px #000;
