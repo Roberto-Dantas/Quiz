@@ -419,18 +419,7 @@ function enquanto() {
     }
 }
 function validacao2() {
-    if(Clicados > 0){
-        if(Clicados >= 2){
-           alert("Por favor apenas 1 alternativa :/");
-           box1.checked = 0
-           box2.checked = 0
-           box3.checked = 0
-           box4.checked = 0
-           box5.checked = 0
-           enquanto()
-        
-        }
-        if(Clicados === 1){
+    if(Clicados === 1){
            chegou = 1
            colorindo()
            box1.checked = 0
@@ -438,9 +427,8 @@ function validacao2() {
            box3.checked = 0
            box4.checked = 0
            box5.checked = 0
-         }
      }
-     else{
+     if(Clicados === 0){
         alert("Por favor escolha alguma das seguintes alternativas:");
      }
 }
@@ -493,36 +481,56 @@ function telaFinal() {
 }
 function alterna1() {
     if(box1.checked) {
-        box1.checked = 0
+        
     }else{
+        box2.checked = 0
+        box3.checked = 0
+        box4.checked = 0
+        box5.checked = 0
         box1.checked = true
     }
 }
 function alterna2() {
     if(box2.checked) {
-        box2.checked = 0
+        
     }else{
+        box1.checked = 0
+        box3.checked = 0
+        box4.checked = 0
+        box5.checked = 0
         box2.checked = true
     }
 }
 function alterna3() {
     if(box3.checked) {
-        box3.checked = 0
+        
     }else{
+        box1.checked = 0
+        box2.checked = 0
+        box4.checked = 0
+        box5.checked = 0
         box3.checked = true
     }
 }
 function alterna4() {
     if(box4.checked) {
-        box4.checked = 0
+        
     }else{
+        box1.checked = 0
+        box2.checked = 0
+        box3.checked = 0
+        box5.checked = 0
         box4.checked = true
     }
 }
 function alterna5() {
     if(box5.checked) {
-        box5.checked = 0
+        
     }else{
+        box1.checked = 0
+        box2.checked = 0
+        box3.checked = 0
+        box4.checked = 0
         box5.checked = true
     }
 }
