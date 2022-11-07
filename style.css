@@ -145,7 +145,9 @@ body{
     height: 200px;
     width: auto;
     background: blue;
-    padding: 10px;
+    padding-top: 10%;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 #opcoes li{
     display: none;
@@ -157,8 +159,6 @@ body{
     opacity: 80%;
     margin-left:auto;
     margin-right:auto;
-    margin-top: auto;
-    margin-bottom: auto;
 }
 #opcoes button{
     background: rgb(255, 255, 255, 0.0);
