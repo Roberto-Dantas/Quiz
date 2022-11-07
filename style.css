@@ -211,8 +211,7 @@ body{
 }
 #parteQuiz{
     text-align: center;
-    padding: 5%;
-    padding-top:3%;
+    padding:3%;
     
 }
 .divPerguntaTexto{
@@ -228,8 +227,8 @@ body{
     
 }
 .alternativas table{
-    margin-left: 11%;
-    margin-right: 11%;
+    margin-left: 10%;
+    margin-right: 10%;
     width: 350px;
     
    
@@ -258,7 +257,7 @@ body{
     font-size: 20px;
     float: left;
     padding-left: 15px;
-    width:250px;
+    width:300px;
     height: 25px;
     
 }
@@ -289,10 +288,9 @@ body{
     position: relative;
     color: #E8000D;
     font-size: 25px;
-    padding-top: 15%;
+    padding-top: 10%;
     font-family: Comic Sans MS;
     text-align: center;
-    font-size: 25px;
 }
 #notaFinal{
     display: none;
