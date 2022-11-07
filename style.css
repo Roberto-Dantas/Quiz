@@ -94,7 +94,7 @@ body{
 }
 #conteudoEscrito{
     background: rgb(255, 255, 255, 0.8);
-    height: 450px;
+    height: 475px;
     width: 500px;
     position: relative;
     border-radius: 15px;
@@ -211,9 +211,9 @@ body{
 }
 #parteQuiz{
     text-align: center;
-    padding-left:2%;
-    padding-right:2%;
-    padding-bottom: 2%;
+    padding-left:3%;
+    padding-right:3%;
+    padding-bottom: 3%;
     padding-top:1%;
 }
 .divPerguntaTexto{
@@ -256,7 +256,7 @@ body{
     height: 25px;
 }
 .alternativas p{
-    font-size: 17px;
+    font-size: 19px;
     float: left;
     padding-left: 15px;
     width:300px;
