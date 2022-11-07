@@ -49,7 +49,7 @@ body{
 #conteudo{
     height: 600px;
     background-size: cover;
-    background-image: url('fundo.jpeg');
+    background-image: url('../Img/fundo.jpeg');
     background-repeat: no-repeat;
     padding-top: 10%;
     box-shadow: 2px 2px 50px #000;
@@ -270,6 +270,55 @@ body{
     position: relative;
     margin-left: auto;
     margin-right: auto;
+}
+#oFinal{
+    color: #fff;
+    position: relative;
+    height: 500px;
+    display: none;
+    text-align:center;
+    
+}
+#falaFinal{
+    display: none;
+    position: relative;
+    color: #E8000D;
+    font-size: 25px;
+    padding-top: 15%;
+    font-family: Comic Sans MS;
+    text-align: center;
+    font-size: 25px;
+}
+#notaFinal{
+    display: none;
+    font-size: 15px;
+    color: #000;
+    width: 200px;
+    margin-left: auto; 
+    margin-right: auto;
+}
+#textoFinal{
+    display: none;
+    color: #000;
+    font-size:18px;
+    width: 250px;
+    margin-left: auto; 
+    margin-right: auto;
+}
+#botaoReiniciarTudo{
+    font-weight: 400;    
+    box-shadow: 2px 2px 20px #000;
+    background: #E8000D;
+    font-size: 15px;
+    color: #fff;
+    border-radius: 10px;
+    padding: 5px;
+    width: 115px;
+    margin-left: auto; 
+    margin-right: auto;
+    text-align: center;
+    display: none;
+        
 }
 #espaco2{
     height: 60px;
