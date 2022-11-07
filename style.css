@@ -136,7 +136,7 @@ body{
     padding-top: 5%;
     font-size: 35px;
     display: none;
-    
+    background: pink;
 }
 #opcoes ul{
     text-align: center;
@@ -145,6 +145,7 @@ body{
     margin-right:13%;
     height: 200px;
     width: 350px;
+    background: blue;
 }
 #opcoes li{
     display: none;
