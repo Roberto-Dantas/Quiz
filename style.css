@@ -211,7 +211,7 @@ body{
 }
 #parteQuiz{
     text-align: center;
-    padding:3%;
+    padding:2%;
     
 }
 .divPerguntaTexto{
@@ -221,7 +221,7 @@ body{
     display:none;
     color: #E8000D;
     font-weight: 800;
-    font-size: 26px;
+    font-size: 25px;
     margin-left: 2%;
     margin-right: 2%;
     
@@ -254,7 +254,7 @@ body{
     height: 25px;
 }
 .alternativas p{
-    font-size: 15px;
+    font-size: 17px;
     float: left;
     padding-left: 15px;
     width:300px;
