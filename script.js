@@ -59,7 +59,9 @@ var Clicados = 0
 var caixaClicada 
 var respostasFinal 
 var pontoValido
-var aleatorio 
+var aleatorio
+var pontuacaoFinal = 0
+var todasPerguntas=["","","","","","","","","",""]
 
 function iniciar(){
     escolhida.style.display='none'
@@ -71,26 +73,38 @@ function iniciar(){
 function colorindo() {
     respostasFinal = "box[" + caixaClicada + "]"
     
+    
     var bo = [p1,p2, p3, p4, p5, p6, p7, p8, p9, p10]
     var po = [simAlternativa1, simAlternativa2, simAlternativa3, simAlternativa4, simAlternativa5]
+    
     
     if(chegou === 1){
         
         if(respostasCertas[aleatorio] === respostasFinal){
+            pontuacaoFinal = pontuacaoFinal +1
+            todasPerguntas[i] = respostasFinal + "-ACERTOU"
             
+            console.log(pontuacaoFinal);
+            console.log(todasPerguntas[i]);
             menu.style.transition="1s"
             po[caixaClicada - 1].style.transition="0.5s"
             menu.style.backgroundColor="green"
             po[caixaClicada - 1].style.backgroundColor="#50c05ad7"
             palavraQuiz.style.transition="1s"
             palavraQuiz.style.color="#fff"
-            setTimeout(function(){po[caixaClicada - 1].style.transition="0.5s"; po[caixaClicada - 1].style.backgroundColor="rgb(255, 255, 255, 0.0)"; },1000)
+            setTimeout(function(){po[caixaClicada - 1].style.transition="0.5s"; po[caixaClicada - 1].style.backgroundColor="rgb(255, 255, 255, 0.0)";},1000)
             setTimeout(function(){menu.style.transition="1s"; menu.style.backgroundColor="#fff"; palavraQuiz.style.transition="1s"; palavraQuiz.style.color="#E8000D"; bo[i].style.backgroundColor="green";},1500)
             
             
         }else{
             var correta = respostasCertas[aleatorio].replace("box[","")
             var corretaFinal = correta.replace("]","")
+            
+            
+            todasPerguntas[i] = respostasFinal + "-ERROU"
+            
+            console.log(pontuacaoFinal);
+            console.log(todasPerguntas[i]);
             
             menu.style.transition="1s";
             po[caixaClicada - 1].style.transition="0.5s";
@@ -215,12 +229,12 @@ function acaoQuiz(){
    opcoes.style.display="none"
    
    escolheu = 'Você escolheu o tema de AÇÃO'
-   aPergunta = ["Qual das alternativas abaixo não é de AÇÃO:", "Qual desses seria quase que obrigatório assistir:", "Qual desses não se encontra no MCU:", "Nas mãos desse personagem principal, até uma caneta é uma arma:", "Qual desses não se encaixam com os outros:", "Qual desses é permitido chorar (motivo: filme ser muito bom):", "Rocky Balboa não participa de qual dos filmes abaixo:", "Qual desses nunca foram arqui-inimigos nos filmes:", "9-)", "10-)"]
-   alt1 = ["O Primeiro Vingador", "Velozes e Furiosos 8", "WandaVision", "Carga Explosiva", "Hitman", "Thor Amor e Trovão", "Rambo", "Batman e Coringa", "9-)", "10-)"]
-   alt2 = ["Abracadabra", "Agente Oculto",   "Eternos", "Avatar", "Ben10", "Cidade Perdida", "Duro de Matar", "Flash e Mercúrio", "9-)", "10-)"]
-   alt3 = ["#Alive", "Uncharted: Fora do Mapa", "Capitã Marvel", "Velozes e Furiosos 5", "James Bond", "Mulher-Maravilha 1984", "Creed-Nascido para Lutar", "Professor Xavier e Magneto", "9-)", "10-)"]
-   alt4 = ["Deadpool", "KarateKid", "Homem-Formiga e a Vespa", "John Wick 3", "John Wick", "Venom: Tempo de Carnificina", "Rocky V", "Superman e Lex Luthor", "9-)", "10-)"]
-   alt5 = ["Clube da Luta", "Viúva Negra", "Aves de Rapina", "Missão Impossível", "Soldado Infernal", "Coração de Ferro", "Ajuste de Contas", "Thor e Loki", "9-)", "10-)"]
+   aPergunta = ["Qual das alternativas abaixo não é de AÇÃO:", "Qual desses seria quase que obrigatório assistir:", "Qual desses não se encontra no MCU:", "Nas mãos desse personagem principal, até uma caneta é uma arma:", "Qual desses não se encaixam com os outros:", "Qual desses é permitido chorar (motivo: filme ser muito bom):", "Rocky Balboa não participa de qual dos filmes abaixo:", "Qual desses nunca foram arqui-inimigos nos filmes:", "Qual provavelmente o orçamento saiu mais caro:", "10-)"]
+   alt1 = ["O Primeiro Vingador", "Velozes e Furiosos 8", "WandaVision", "Carga Explosiva", "Hitman", "Thor Amor e Trovão", "Rambo", "Batman e Coringa", "Alerta Vermelho", "10-)"]
+   alt2 = ["Abracadabra", "Agente Oculto",   "Eternos", "Avatar", "Ben10", "Cidade Perdida", "Duro de Matar", "Flash e Mercúrio", "Mad Max (1979)", "10-)"]
+   alt3 = ["#Alive", "Uncharted: Fora do Mapa", "Capitã Marvel", "Velozes e Furiosos 5", "James Bond", "Mulher-Maravilha 1984", "Creed-Nascido para Lutar", "Professor Xavier e Magneto", "Napoleon Dynamite", "10-)"]
+   alt4 = ["Deadpool", "KarateKid", "Homem-Formiga e a Vespa", "John Wick 3", "John Wick", "Venom: Tempo de Carnificina", "Rocky V", "Superman e Lex Luthor", "Halloween", "10-)"]
+   alt5 = ["Clube da Luta", "Viúva Negra", "Aves de Rapina", "Missão Impossível", "Soldado Infernal", "Coração de Ferro", "Ajuste de Contas", "Thor e Loki", "Atividade Paranormal", "10-)"]
    respostasCertas = ["box[2]","box[4]", "box[5]","box[4]","box[2]","box[5]","box[2]","box[2]","box[1]","box[3]"]
    
     qualEscolheu.innerHTML= escolheu
@@ -430,8 +444,16 @@ function validacao2() {
         alert("Por favor escolha alguma das seguintes alternativas:");
      }
 }
-function telaFinal() {
+var chamando00 = document.getElementById('oFinal')
+var chamando0 = document.getElementById('falaFinal')
+    var chamando1 = document.getElementById('notaFinal')
+    var chamando2 = document.getElementById('textoFinal')
+    var clique2 = document.getElementById('botaoReiniciarTudo')
     
+function telaFinal() {
+
+    var oTemaEscolhido = escolheu.replace("Você escolheu o tema de ","")
+    console.log(escolheu);
     perguntaTexto.style.display="none"
     box1.style.display="none"
     alternativa1.style.display="none"
@@ -445,7 +467,29 @@ function telaFinal() {
     alternativa5.style.display="none"
     botaoProxima.style.display="none";
     setTimeout(function(){pontuacao.style.display="none"; linhaPontucao.style.display="none";},2000)
-         
+    
+    oFinal.style.display="block"
+    falaFinal.style.display="block"
+    notaFinal.style.display="block"
+    textoFinal.style.display="block"
+    botaoReiniciarTudo.style.display="block"
+    
+    if(pontuacaoFinal === 0){
+        falaFinal.innerHTML = "Então... sua nota foi:"; notaFinal.innerHTML = pontuacaoFinal + "0" + "/100pts"; textoFinal.innerHTML = "Com certeza você não assite filmes de " + oTemaEscolhido + " com muita frequência..."
+    }
+    
+    if(pontuacaoFinal === 1 || pontuacaoFinal <= 5){
+        falaFinal.innerHTML = "Éhh sua nota foi:"; notaFinal.innerHTML = pontuacaoFinal + "0" + "/100pts"; textoFinal.innerHTML = "Pelo o que eu vi, você não assite conhece muitos filmes de " + oTemaEscolhido + ", mas tudo bem, tente outro tema:"
+    }
+    
+    if(pontuacaoFinal > 5 || pontuacaoFinal <= 7){
+        falaFinal.innerHTML = "Parabéns sua nota foi:"; notaFinal.innerHTML = pontuacaoFinal + "0" + "/100pts"; textoFinal.innerHTML = "Você acertou mais da metade, meus parabéns"
+    }
+    
+    if(pontuacaoFinal > 7) {
+        falaFinal.innerHTML = "Parabéns sua nota foi:"; notaFinal.innerHTML = pontuacaoFinal + "0" + "/100pts"; textoFinal.innerHTML = "Tenho quase certeza que você assiste muitos filmes de " + oTemaEscolhido + " agora tente os outros temas"
+    }
+    
 }
 function alterna1() {
     if(box1.checked) {
@@ -482,3 +526,25 @@ function alterna5() {
         box5.checked = true
     }
 }
+
+function cliqueFinal() {
+    pontuacaoFinal = 0
+    chegou = 0
+    as = 0
+    i= 0
+    p1.style.backgroundColor="rgb(255, 255, 255, 0.0)"; 
+    p2.style.backgroundColor="rgb(255, 255, 255, 0.0)"; 
+    p3.style.backgroundColor="rgb(255, 255, 255, 0.0)"; 
+    p4.style.backgroundColor="rgb(255, 255, 255, 0.0)"; 
+    p5.style.backgroundColor="rgb(255, 255, 255, 0.0)"; 
+    p6.style.backgroundColor="rgb(255, 255, 255, 0.0)"; 
+    p7.style.backgroundColor="rgb(255, 255, 255, 0.0)"; 
+    p8.style.backgroundColor="rgb(255, 255, 255, 0.0)"; 
+    p9.style.backgroundColor="rgb(255, 255, 255, 0.0)"; 
+    p10.style.backgroundColor="rgb(255, 255, 255, 0.0)"; 
+    botaoReiniciarTudo.style.transition="0.15s"
+    botaoReiniciarTudo.style.fontWeight= "600"
+    setTimeout(function(){botaoReiniciarTudo.style.display="none"; falaFinal.style.display="none"; notaFinal.style.display="none"; textoFinal.style.display="none"; oFinal.style.display="none"; setTimeout(function() {opcoes.style.display="block"; },1500)},500)
+    
+}
+
