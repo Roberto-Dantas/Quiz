@@ -139,9 +139,11 @@ body{
 }
 #opcoes ul{
     text-align: center;
-    padding-top: 40px;
+    padding: 20px;
     margin-left:15%;
     margin-right:13%;
+    height: 200px;
+    width: 350px;
 }
 #opcoes li{
     display: none;
