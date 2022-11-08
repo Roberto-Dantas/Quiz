@@ -209,7 +209,7 @@ function proxima() {
     linhaPontucao.style.display="block";
     perguntaTexto.style.display="block";
     setTimeout(function(){box1.style.display="block"; alternativa1.style.display="block"; setTimeout(function(){box2.style.display="block"; alternativa2.style.display="block"; setTimeout(function(){box3.style.display="block"; alternativa3.style.display="block"; setTimeout(function(){box4.style.display="block"; alternativa4.style.display="block"; setTimeout(function(){box5.style.display="block"; alternativa5.style.display="block"; setTimeout(function(){botaoProxima.style.display="block";},700)},400)},400)},400)},400)},600)
-   0
+   palavraAssina()
     }
 }
 function voltar(){
@@ -395,7 +395,7 @@ function enquanto() {
     var altern4 = document.getElementById('box4')
     var altern5 = document.getElementById('box5')
    
-   if(altern1.checked) {
+    if(altern1.checked) {
         Clicados =  Clicados + 1
         caixaClicada = 1
     }
@@ -415,6 +415,7 @@ function enquanto() {
         Clicados =  Clicados + 1
         caixaClicada = 5
     }
+    
     validacao2()
     }
 }
@@ -481,8 +482,6 @@ function telaFinal() {
 }
 function alterna1() {
     if(box1.checked) {
-        
-    }else{
         box2.checked = 0
         box3.checked = 0
         box4.checked = 0
@@ -492,8 +491,6 @@ function alterna1() {
 }
 function alterna2() {
     if(box2.checked) {
-        
-    }else{
         box1.checked = 0
         box3.checked = 0
         box4.checked = 0
@@ -503,8 +500,6 @@ function alterna2() {
 }
 function alterna3() {
     if(box3.checked) {
-        
-    }else{
         box1.checked = 0
         box2.checked = 0
         box4.checked = 0
@@ -514,8 +509,6 @@ function alterna3() {
 }
 function alterna4() {
     if(box4.checked) {
-        
-    }else{
         box1.checked = 0
         box2.checked = 0
         box3.checked = 0
@@ -525,8 +518,6 @@ function alterna4() {
 }
 function alterna5() {
     if(box5.checked) {
-        
-    }else{
         box1.checked = 0
         box2.checked = 0
         box3.checked = 0
@@ -534,7 +525,34 @@ function alterna5() {
         box5.checked = true
     }
 }
-
+    var alternativaClicada1 = document.getElementById('simAlternativa1')
+    var alternativaClicada2 = document.getElementById('simAlternativa2')
+    var alternativaClicada3 = document.getElementById('simAlternativa3')
+    var alternativaClicada4 = document.getElementById('simAlternativa4')
+    var alternativaClicada5 = document.getElementById('simAlternativa5')
+    
+function palavraAssina(){
+    simAlternativa1.onclick = function(){
+        box1.checked = true
+        alterna1()
+    }
+    simAlternativa2.onclick = function(){
+        box2.checked = true
+        alterna2()
+    }
+    simAlternativa3.onclick = function(){
+        box3.checked = true
+        alterna3()
+    }
+    simAlternativa4.onclick = function(){
+        box4.checked = true
+        alterna4()
+    }
+    simAlternativa5.onclick = function(){
+        box5.checked = true
+        alterna5()
+    }
+}
 function cliqueFinal() {
     pontuacaoFinal = 0
     chegou = 0
@@ -555,4 +573,3 @@ function cliqueFinal() {
     setTimeout(function(){botaoReiniciarTudo.style.display="none"; falaFinal.style.display="none"; notaFinal.style.display="none"; textoFinal.style.display="none"; oFinal.style.display="none"; setTimeout(function() {opcoes.style.display="block"; },1500)},500)
     
 }
-
