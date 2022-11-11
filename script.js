@@ -1,4 +1,3 @@
-
 var titulorincipal = document.getElementById('titulo')
 var cliqueAqui = document.getElementById('clique')
 var asOpcoes = document.getElementById('opcoes')
@@ -17,212 +16,17 @@ function botaoMenu() {
     clique.style.transition="0.15s"
     clique.style.fontWeight= "600"
     setTimeout(function(){clique.style.display="none"; titulo.style.display="none"; setTimeout(function() {tituloOpcoes.style.display="block"; setTimeout(function(){tema1.style.display="block"; tema2.style.display="block"; tema3.style.display="block"; tema4.style.display="block"; tema5.style.display="block"; tema6.style.display="block"; tema7.style.display="block"; tema8.style.display="block"; tema9.style.display="block";},500)},500)},1500)
-    
+
 }
 
-var oMenu = document.getElementById('menu')
-var aQuiz = document.getElementById('palavraQuiz')
-var foraLinhaPontos = document.getElementById('pontuacao')
-var linhaPontos = document.getElementById('linhaPontucao')
-var ponto1 = document.getElementById('p1')
-var ponto2 = document.getElementById('p2')
-var ponto3 = document.getElementById('p3')
-var ponto4 = document.getElementById('p4')
-var ponto5 = document.getElementById('p5')
-var ponto6 = document.getElementById('p6')
-var ponto7 = document.getElementById('p7')
-var ponto8 = document.getElementById('p8')
-var ponto9 = document.getElementById('p9')
-var ponto10 = document.getElementById('p10')
-
-var todaParteDoQuiz = document.getElementById('parteQuiz')
-var pergunta = document.getElementById('perguntaTexto')
-var a1 = document.getElementById('alternativa1')
-var a2 = document.getElementById('alternativa2')
-var a3 = document.getElementById('alternativa3')
-var a4 = document.getElementById('alternativa4')
-var a5 = document.getElementById('alternativa5')
-var aCaixa1 = document.getElementById('simAlternativa1')
-var aCaixa2 = document.getElementById('simAlternativa2')
-var aCaixa3 = document.getElementById('simAlternativa3')
-var aCaixa4 = document.getElementById('simAlternativa4')
-var aCaixa5 = document.getElementById('simAlternativa5')
-var botaoProximaPergunta = document.getElementById('botaoProxima')
-
-var i= 0
 var escolheu 
 var aPergunta
 var alt1, alt2, alt3, alt4, alt5
 var respostasCertas
-var chegou
-var Clicados = 0
-var caixaClicada 
-var respostasFinal 
-var pontoValido
-var aleatorio
-var pontuacaoFinal = 0
-var todasPerguntas=["","","","","","","","","",""]
-
-function iniciar(){
-    escolhida.style.display='none'
-    i = i -1
-    
-    proxima()
-    
-}
-function colorindo() {
-    respostasFinal = "box[" + caixaClicada + "]"
-    
-    
-    var bo = [p1,p2, p3, p4, p5, p6, p7, p8, p9, p10]
-    var po = [simAlternativa1, simAlternativa2, simAlternativa3, simAlternativa4, simAlternativa5]
-    
-    
-    if(chegou === 1){
-        
-        if(respostasCertas[aleatorio] === respostasFinal){
-            pontuacaoFinal = pontuacaoFinal +1
-            todasPerguntas[i] = respostasFinal + "-ACERTOU"
-            
-            console.log(pontuacaoFinal);
-            console.log(todasPerguntas[i]);
-            menu.style.transition="1s"
-            po[caixaClicada - 1].style.transition="0.5s"
-            menu.style.backgroundColor="green"
-            po[caixaClicada - 1].style.backgroundColor="#50c05ad7"
-            palavraQuiz.style.transition="1s"
-            palavraQuiz.style.color="#fff"
-            setTimeout(function(){po[caixaClicada - 1].style.transition="0.5s"; po[caixaClicada - 1].style.backgroundColor="rgb(255, 255, 255, 0.0)";},1000)
-            setTimeout(function(){menu.style.transition="1s"; menu.style.backgroundColor="#fff"; palavraQuiz.style.transition="1s"; palavraQuiz.style.color="#E8000D"; bo[i].style.backgroundColor="green";},1500)
-            
-            
-        }else{
-            var correta = respostasCertas[aleatorio].replace("box[","")
-            var corretaFinal = correta.replace("]","")
-            
-            
-            todasPerguntas[i] = respostasFinal + "-ERROU"
-            
-            console.log(pontuacaoFinal);
-            console.log(todasPerguntas[i]);
-            
-            menu.style.transition="1s";
-            po[caixaClicada - 1].style.transition="0.5s";
-            po[corretaFinal -1].style.transition="0.5s";
-            menu.style.backgroundColor="red";
-            po[caixaClicada - 1].style.backgroundColor="red";
-            po[corretaFinal -1].style.backgroundColor="#50c05ad7";
-            palavraQuiz.style.transition="1s";
-            palavraQuiz.style.color="#000";
-           
-            setTimeout(function(){menu.style.transition="1s"; menu.style.backgroundColor="#fff"; po[caixaClicada -1].style.transition="0.5s"; po[corretaFinal -1].style.transition="0.5s"; po[caixaClicada -1].style.backgroundColor="rgb(255, 255, 255, 0.0)"; po[corretaFinal -1].style.backgroundColor="rgb(255, 255, 255, 0.0)"; palavraQuiz.style.transition="1s"; palavraQuiz.style.color="#E8000D"; bo[i].style.backgroundColor="red"},1500)
-            
-        }
-      
-    }
-   setTimeout(function(){proxima()},2000) 
-    
-    
-}
-function getRandomInt(min, max){ 
-    min = Math.ceil(min); 
-    max = Math.floor(max);
-    aleatorio = Math.floor(Math.random() * (max - min) + min);
-    
-}
-
-var as = 0
-jo = ["","","","","","","","","",""]
-
-function validacaoAleatorio() {
-    getRandomInt(0, 10)
-   
-   if(aleatorio === jo[0]) {
-       validacaoAleatorio()
-   }
-   if(aleatorio === jo[1]) {
-       validacaoAleatorio()
-   }
-   if(aleatorio === jo[2]) {
-       validacaoAleatorio()
-   }
-   if(aleatorio === jo[3]) {
-       validacaoAleatorio()
-   }
-   if(aleatorio === jo[4]) {
-       validacaoAleatorio()
-   }
-   if(aleatorio === jo[5]) {
-       validacaoAleatorio()
-   }
-   if(aleatorio === jo[6]) {
-       validacaoAleatorio()
-   }
-   if(aleatorio === jo[7]) {
-       validacaoAleatorio()
-   }
-   if(aleatorio === jo[8]) {
-       validacaoAleatorio()
-   }
-   if(aleatorio === jo[9]) {
-       validacaoAleatorio()
-   }
-   
-   
-}
-function proxima() {
-   as = as +1
-   i = i +1
-   
-    if(i === 10){
-         
-          telaFinal()
-          
-    }else{
-    
-    validacaoAleatorio()
-    jo[as] = aleatorio
-    
-    pontuacao.style.display="none"
-    linhaPontucao.style.display="none"
-    perguntaTexto.style.display="none"
-    box1.style.display="none"
-    alternativa1.style.display="none"
-    box2.style.display="none";
-    alternativa2.style.display="none"
-    box3.style.display="none"
-    alternativa3.style.display="none"
-    box4.style.display="none";
-    alternativa4.style.display="none"
-    box5.style.display="none";
-    alternativa5.style.display="none"
-    botaoProxima.style.display="none";
-    
-    perguntaTexto.innerHTML= aPergunta[aleatorio]
-    alternativa1.innerHTML = alt1[aleatorio]
-    alternativa2.innerHTML = alt2[aleatorio]
-    alternativa3.innerHTML = alt3[aleatorio]
-    alternativa4.innerHTML = alt4[aleatorio]
-    alternativa5.innerHTML = alt5[aleatorio]    
-    
-    pontuacao.style.display="block"
-    linhaPontucao.style.display="block";
-    perguntaTexto.style.display="block";
-    setTimeout(function(){box1.style.display="block"; alternativa1.style.display="block"; setTimeout(function(){box2.style.display="block"; alternativa2.style.display="block"; setTimeout(function(){box3.style.display="block"; alternativa3.style.display="block"; setTimeout(function(){box4.style.display="block"; alternativa4.style.display="block"; setTimeout(function(){box5.style.display="block"; alternativa5.style.display="block"; setTimeout(function(){botaoProxima.style.display="block";},700)},400)},400)},400)},400)},600)
-   palavraAssina()
-    }
-}
-function voltar(){
-    escolhida.style.display='none'
-    setTimeout(function(){opcoes.style.display="block"},500)
-}
-
-
-
-var temas = document.getElementById('escolhida')
-var botaoVoltarParaTemas = document.getElementById('botao2')
 var qualAPessoaEscolheu = document.getElementById('qualEscolheu')
+var temas = document.getElementById('escolhida')
 var textinhoExplicativo = document.getElementById('explicacaoQuiz')
+var botaoVoltarParaTemas = document.getElementById('botao2')
 var botaoIniciarQuiz = document.getElementById('botao1')
 
 function acaoQuiz(){
@@ -240,10 +44,9 @@ function acaoQuiz(){
     qualEscolheu.innerHTML= escolheu
     setTimeout(function(){escolhida.style.display="block"; botao2.style.display="block"; qualEscolheu.style.display="block"; explicacaoQuiz.style.display="block"; botao1.style.display="block"},300)
     
-    
 }
 function animacaoQuiz(){
-    opcoes.style.display="none"
+   opcoes.style.display="none"
    
    escolheu = 'Você escolheu o tema de ANIMAÇÃO'
    aPergunta = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
@@ -257,7 +60,6 @@ function animacaoQuiz(){
     qualEscolheu.innerHTML= escolheu
     setTimeout(function(){escolhida.style.display="block"; botao2.style.display="block"; qualEscolheu.style.display="block"; explicacaoQuiz.style.display="block"; botao1.style.display="block"},500)
     
-   
 }
 function aventuraQuiz(){
     opcoes.style.display="none"
@@ -274,7 +76,6 @@ function aventuraQuiz(){
     qualEscolheu.innerHTML= escolheu
     setTimeout(function(){escolhida.style.display="block"; botao2.style.display="block"; qualEscolheu.style.display="block"; explicacaoQuiz.style.display="block"; botao1.style.display="block"},500)
     
-   
 }
 function comediaQuiz() {
     opcoes.style.display="none"
@@ -291,7 +92,6 @@ function comediaQuiz() {
     qualEscolheu.innerHTML= escolheu
     setTimeout(function(){escolhida.style.display="block"; botao2.style.display="block"; qualEscolheu.style.display="block"; explicacaoQuiz.style.display="block"; botao1.style.display="block"},500)
     
-   
 }
 function ficcaoQuiz() {
     opcoes.style.display="none"
@@ -308,7 +108,6 @@ function ficcaoQuiz() {
     qualEscolheu.innerHTML= escolheu
     setTimeout(function(){escolhida.style.display="block"; botao2.style.display="block"; qualEscolheu.style.display="block"; explicacaoQuiz.style.display="block"; botao1.style.display="block"},500)
     
-   
 }
 function romanceQuiz() {
     opcoes.style.display="none"
@@ -325,7 +124,6 @@ function romanceQuiz() {
     qualEscolheu.innerHTML= escolheu
     setTimeout(function(){escolhida.style.display="block"; botao2.style.display="block"; qualEscolheu.style.display="block"; explicacaoQuiz.style.display="block"; botao1.style.display="block"},500)
     
-   
 }
 function suspenseQuiz() {
     opcoes.style.display="none"
@@ -342,9 +140,7 @@ function suspenseQuiz() {
     qualEscolheu.innerHTML= escolheu
     setTimeout(function(){escolhida.style.display="block"; botao2.style.display="block"; qualEscolheu.style.display="block"; explicacaoQuiz.style.display="block"; botao1.style.display="block"},500)
     
-   
 }
-
 function terrorQuiz() {
     opcoes.style.display="none"
    
@@ -362,7 +158,7 @@ function terrorQuiz() {
    
 }
 function thrillerQuiz() {
-    opcoes.style.display="none"
+   opcoes.style.display="none"
    
    escolheu = 'Você escolheu o tema de THRILLER'
    aPergunta = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
@@ -375,74 +171,67 @@ function thrillerQuiz() {
    
     qualEscolheu.innerHTML= escolheu
     setTimeout(function(){escolhida.style.display="block"; botao2.style.display="block"; qualEscolheu.style.display="block"; explicacaoQuiz.style.display="block"; botao1.style.display="block"},500)
-    
    
 }
-function validacao() {
-    Clicados = 0
-    if(Clicados === 0) {
-        enquanto()
-    }
+
+var i = 0
+
+function iniciar(){
+    escolhida.style.display='none'
+    i = i -1
+    
+    proxima()
+}
+function voltar(){
+    escolhida.style.display='none'
+    setTimeout(function(){opcoes.style.display="block"},500)
 }
 
-function enquanto() {
-    
-    if(Clicados === 0){
-    
-    var altern1 = document.getElementById('box1')
-    var altern2 = document.getElementById('box2')
-    var altern3 = document.getElementById('box3')
-    var altern4 = document.getElementById('box4')
-    var altern5 = document.getElementById('box5')
-   
-    if(altern1.checked) {
-        Clicados =  Clicados + 1
-        caixaClicada = 1
-    }
-    if(altern2.checked) {
-        Clicados =  Clicados + 1
-        caixaClicada = 2
-    }
-    if(altern3.checked) {
-        Clicados =  Clicados + 1
-        caixaClicada = 3
-    }
-    if(altern4.checked) {
-        Clicados =  Clicados + 1
-        caixaClicada = 4
-    }
-    if(altern5.checked) {
-        Clicados =  Clicados + 1
-        caixaClicada = 5
-    }
-    
-    validacao2()
-    }
-}
-function validacao2() {
-    if(Clicados === 1){
-           chegou = 1
-           colorindo()
-           box1.checked = 0
-           box2.checked = 0
-           box3.checked = 0
-           box4.checked = 0
-           box5.checked = 0
-     }
-     if(Clicados === 0){
-        alert("Por favor escolha alguma das seguintes alternativas:");
-     }
-}
-var chamando00 = document.getElementById('oFinal')
-var chamando0 = document.getElementById('falaFinal')
-    var chamando1 = document.getElementById('notaFinal')
-    var chamando2 = document.getElementById('textoFinal')
-    var clique2 = document.getElementById('botaoReiniciarTudo')
-    
-function telaFinal() {
+var as = -1
+var pergunta = document.getElementById('perguntaTexto')
+var a1 = document.getElementById('alternativa1')
+var a2 = document.getElementById('alternativa2')
+var a3 = document.getElementById('alternativa3')
+var a4 = document.getElementById('alternativa4')
+var a5 = document.getElementById('alternativa5')
+var botaoProximaPergunta = document.getElementById('botaoProxima')
+var foraLinhaPontos = document.getElementById('pontuacao')
+var linhaPontos = document.getElementById('linhaPontucao')
+var altern1 = document.getElementById('box1')
+var altern2 = document.getElementById('box2')
+var altern3 = document.getElementById('box3')
+var altern4 = document.getElementById('box4')
+var altern5 = document.getElementById('box5')
+var sobrePerguntas 
+sobrePerguntas = ["","","","","","","","","",""]
+var al
 
-    var oTemaEscolhido = escolheu.replace("Você escolheu o tema de ","")
-    console.log(escolheu);
+function proxima() {
+    as = as +1
+    i = i +1
+    al = ["","","","",""]
+    
+    ;
+    
+    if(i === 10){
+         
+          telaFinal()
+          
+    }else{
+    
+    validacaoAleatorio()
+    sobrePerguntas[as] = aleatorio
+    
+    
+    for(var kol = 0; kol <=4; kol++){
+        validacaoAleatorioAlternativas()
+        al[kol] = ordemAlternativas
+    }
+    perguntaTexto.innerHTML = aPergunta[aleatorio]
+    console.log(respostasCertas[aleatorio])
+    
+    pontuacao.style.display="none"
+    linhaPontucao.style.display="none"
     perguntaTexto.style.display="none"
     box1.style.display="none"
     alternativa1.style.display="none"
@@ -455,30 +244,261 @@ function telaFinal() {
     box5.style.display="none";
     alternativa5.style.display="none"
     botaoProxima.style.display="none";
-    setTimeout(function(){pontuacao.style.display="none"; linhaPontucao.style.display="none";},2000)
+        
+    perguntasAleatorias()
     
-    oFinal.style.display="block"
-    falaFinal.style.display="block"
-    notaFinal.style.display="block"
-    textoFinal.style.display="block"
-    botaoReiniciarTudo.style.display="block"
+    box1.checked = 0
+    box2.checked = 0
+    box3.checked = 0
+    box4.checked = 0
+    box5.checked = 0
     
-    if(pontuacaoFinal === 0){
-        falaFinal.innerHTML = "Então... sua nota foi:"; notaFinal.innerHTML = pontuacaoFinal + "0" + "/100pts"; textoFinal.innerHTML = "Com certeza você não assite filmes de " + oTemaEscolhido + " com muita frequência..."
+    pontuacao.style.display="block"
+    linhaPontucao.style.display="block";
+    perguntaTexto.style.display="block";
+    setTimeout(function(){box1.style.display="block"; alternativa1.style.display="block"; setTimeout(function(){box2.style.display="block"; alternativa2.style.display="block"; setTimeout(function(){box3.style.display="block"; alternativa3.style.display="block"; setTimeout(function(){box4.style.display="block"; alternativa4.style.display="block"; setTimeout(function(){box5.style.display="block"; alternativa5.style.display="block"; setTimeout(function(){botaoProxima.style.display="block";},700)},400)},400)},400)},400)},600)
+    
+   palavraAssina()
+   
     }
+}
+
+
+function validacaoAleatorio() {
+   mini = 0
+   maxi = 10
+   getRandomInt(mini, maxi)
+   
+   if(aleatorio === sobrePerguntas[0]) {
+       validacaoAleatorio()
+   }
+   if(aleatorio === sobrePerguntas[1]) {
+       validacaoAleatorio()
+   }
+   if(aleatorio === sobrePerguntas[2]) {
+       validacaoAleatorio()    
+   }
+   if(aleatorio === sobrePerguntas[3]) {
+       validacaoAleatorio()
+   }
+   if(aleatorio === sobrePerguntas[4]) {
+       validacaoAleatorio()
+   }
+   
+   if(aleatorio === sobrePerguntas[5]) {
+       validacaoAleatorio()
+   }
+   if(aleatorio === sobrePerguntas[6]) {
+       validacaoAleatorio()
+   }
+   if(aleatorio === sobrePerguntas[7]) {
+       validacaoAleatorio()
+   }
+   if(aleatorio === sobrePerguntas[8]) {
+       validacaoAleatorio()
+   }
+   if(aleatorio === sobrePerguntas[9]) {
+       validacaoAleatorio()
+   }   
+}
+function getRandomInt(min, max){ 
+    min = Math.ceil(min); 
+    max = Math.floor(max);
+    aleatorio = Math.floor(Math.random() * (max - min) + min);
+}
+function getRandomInte(min, max){ 
+    min = Math.ceil(min); 
+    max = Math.floor(max);
+    aleatorio02 = Math.floor(Math.random() * (max - min) + min);
+}
+function getRandomIntA(min, max){ 
+    min = Math.ceil(min); 
+    max = Math.floor(max);
+    aleatorio2 = Math.floor(Math.random() * (max - min) + min);
+}
+
+var ordemAlternativas
+
+
+function validacaoAleatorioAlternativas() {
+    getRandomIntA(1,6)
+    ordemAlternativas = aleatorio2
+     
+   if(ordemAlternativas === al[0]) {
+       validacaoAleatorioAlternativas()
+   }
+   if(ordemAlternativas === al[1]) {
+       validacaoAleatorioAlternativas()
+   }
+   if(ordemAlternativas === al[2]) {
+       validacaoAleatorioAlternativas()
+   }
+   if(ordemAlternativas === al[3]) {
+       validacaoAleatorioAlternativas()
+   }
+   if(ordemAlternativas === al[4]) {
+       validacaoAleatorioAlternativas()
+   }
+   
+}
+
+var alternativaClicada1 = document.getElementById('simAlternativa1')
+var alternativaClicada2 = document.getElementById('simAlternativa2')
+var alternativaClicada3 = document.getElementById('simAlternativa3')
+var alternativaClicada4 = document.getElementById('simAlternativa4')
+var alternativaClicada5 = document.getElementById('simAlternativa5')
+
+function perguntasAleatorias() {
+    let agoraSimAlternativas, agoraSimAlternativas2
+    let sobe = 0
+    let rou = 0
     
-    if(pontuacaoFinal === 1 || pontuacaoFinal <= 5){
-        falaFinal.innerHTML = "Éhh sua nota foi:"; notaFinal.innerHTML = pontuacaoFinal + "0" + "/100pts"; textoFinal.innerHTML = "Pelo o que eu vi, você não assite conhece muitos filmes de " + oTemaEscolhido + ", mas tudo bem, tente outro tema:"
+    
+    
+    console.log(sobrePerguntas);
+    while(sobe != 5){
+        rou++
+        agoraSimAlternativas = "alternativa" + rou
+        agoraSimAlternativas2 = "alt" + al[rou -1]
+        
+        
+        if(agoraSimAlternativas === "alternativa1") {
+            if(agoraSimAlternativas2 === "alt1"){
+                alternativa1.innerHTML = alt1[aleatorio] 
+                sobe = sobe +1
+            }
+            if(agoraSimAlternativas2 === "alt2"){
+                alternativa1.innerHTML = alt2[aleatorio]
+                sobe = sobe +1
+            }
+            if(agoraSimAlternativas2 === "alt3"){
+                alternativa1.innerHTML = alt3[aleatorio]
+                sobe = sobe +1
+            }
+            if(agoraSimAlternativas2 === "alt4"){
+                alternativa1.innerHTML = alt4[aleatorio]
+                sobe = sobe +1
+            }
+            if(agoraSimAlternativas2 === "alt5"){
+                alternativa1.innerHTML = alt5[aleatorio]
+                sobe = sobe +1
+            }
+        }
+        if(agoraSimAlternativas === "alternativa2"){
+            if(agoraSimAlternativas2 === "alt1"){
+                alternativa2.innerHTML = alt1[aleatorio] 
+                sobe = sobe +1
+            }
+            if(agoraSimAlternativas2 === "alt2"){
+                alternativa2.innerHTML = alt2[aleatorio]
+                sobe = sobe +1
+            }
+            if(agoraSimAlternativas2 === "alt3"){
+                alternativa2.innerHTML = alt3[aleatorio]
+                sobe = sobe +1
+            }
+            if(agoraSimAlternativas2 === "alt4"){
+                alternativa2.innerHTML = alt4[aleatorio]
+                sobe = sobe +1
+            }
+            if(agoraSimAlternativas2 === "alt5"){
+                alternativa2.innerHTML = alt5[aleatorio]
+                sobe = sobe +1
+            }
+        }
+        if(agoraSimAlternativas === "alternativa3") {
+            if(agoraSimAlternativas2 === "alt1"){
+                alternativa3.innerHTML = alt1[aleatorio] 
+                sobe = sobe +1
+            }
+            if(agoraSimAlternativas2 === "alt2"){
+                alternativa3.innerHTML = alt2[aleatorio]
+                sobe = sobe +1
+            }
+            if(agoraSimAlternativas2 === "alt3"){
+                alternativa3.innerHTML = alt3[aleatorio]
+                sobe = sobe +1
+            }
+            if(agoraSimAlternativas2 === "alt4"){
+                alternativa3.innerHTML = alt4[aleatorio]
+                sobe = sobe +1
+            }
+            if(agoraSimAlternativas2 === "alt5"){
+                alternativa3.innerHTML = alt5[aleatorio]
+                sobe = sobe +1
+            }
+        }
+        if(agoraSimAlternativas === "alternativa4"){
+            if(agoraSimAlternativas2 === "alt1"){
+                alternativa4.innerHTML = alt1[aleatorio] 
+                sobe = sobe +1
+            }
+            if(agoraSimAlternativas2 === "alt2"){
+                alternativa4.innerHTML = alt2[aleatorio]
+                sobe = sobe +1
+            }
+            if(agoraSimAlternativas2 === "alt3"){
+                alternativa4.innerHTML = alt3[aleatorio]
+                sobe = sobe +1
+            }
+            if(agoraSimAlternativas2 === "alt4"){
+                alternativa4.innerHTML = alt4[aleatorio]
+                sobe = sobe +1
+            }
+            if(agoraSimAlternativas2 === "alt5"){
+                alternativa4.innerHTML = alt5[aleatorio]
+                sobe = sobe +1
+            }
+        }
+        if(agoraSimAlternativas === "alternativa5"){
+            if(agoraSimAlternativas2 === "alt1"){
+                alternativa5.innerHTML = alt1[aleatorio] 
+                sobe = sobe +1
+            }
+            if(agoraSimAlternativas2 === "alt2"){
+                alternativa5.innerHTML = alt2[aleatorio]
+                sobe = sobe +1
+            }
+            if(agoraSimAlternativas2 === "alt3"){
+                alternativa5.innerHTML = alt3[aleatorio]
+                sobe = sobe +1
+            }
+            if(agoraSimAlternativas2 === "alt4"){
+                alternativa5.innerHTML = alt4[aleatorio]
+                sobe = sobe +1
+            }
+            if(agoraSimAlternativas2 === "alt5"){
+                alternativa5.innerHTML = alt5[aleatorio]
+                sobe = sobe +1
+            }
+        }
+        
+        
     }
-    
-    if(pontuacaoFinal > 5 || pontuacaoFinal <= 7){
-        falaFinal.innerHTML = "Parabéns sua nota foi:"; notaFinal.innerHTML = pontuacaoFinal + "0" + "/100pts"; textoFinal.innerHTML = "Você acertou mais da metade, meus parabéns"
+    sobe = 0
+    rou = 0
+}
+function palavraAssina(){
+    simAlternativa1.onclick = function(){
+        box1.checked = true
+        alterna1()
     }
-    
-    if(pontuacaoFinal > 7) {
-        falaFinal.innerHTML = "Parabéns sua nota foi:"; notaFinal.innerHTML = pontuacaoFinal + "0" + "/100pts"; textoFinal.innerHTML = "Tenho quase certeza que você assiste muitos filmes de " + oTemaEscolhido + " agora tente os outros temas"
+    simAlternativa2.onclick = function(){
+        box2.checked = true
+        alterna2()
     }
-    
+    simAlternativa3.onclick = function(){
+        box3.checked = true
+        alterna3()
+    }
+    simAlternativa4.onclick = function(){
+        box4.checked = true
+        alterna4()
+    }
+    simAlternativa5.onclick = function(){
+        box5.checked = true
+        alterna5()
+    }
 }
 function alterna1() {
     if(box1.checked) {
@@ -525,39 +545,305 @@ function alterna5() {
         box5.checked = true
     }
 }
-    var alternativaClicada1 = document.getElementById('simAlternativa1')
-    var alternativaClicada2 = document.getElementById('simAlternativa2')
-    var alternativaClicada3 = document.getElementById('simAlternativa3')
-    var alternativaClicada4 = document.getElementById('simAlternativa4')
-    var alternativaClicada5 = document.getElementById('simAlternativa5')
+
+var Clicados = 0
+
+function validacao() {
+    Clicados = 0
+    if(Clicados === 0){
     
-function palavraAssina(){
-    simAlternativa1.onclick = function(){
-        box1.checked = true
-        alterna1()
+        enquanto()
+        
     }
-    simAlternativa2.onclick = function(){
-        box2.checked = true
-        alterna2()
+}
+
+var caixaClicada 
+
+function enquanto() {
+    if(Clicados === 0){
+    
+        if(box1.checked) {
+            Clicados =  Clicados + 1
+            caixaClicada = 1
+        }
+        if(box2.checked) {
+            Clicados =  Clicados + 1
+            caixaClicada = 2
+        }
+        if(box3.checked) {
+            Clicados =  Clicados + 1
+            caixaClicada = 3
+        }
+        if(box4.checked) {
+            Clicados =  Clicados + 1
+            caixaClicada = 4
+        }
+        if(box5.checked) {
+            Clicados =  Clicados + 1
+            caixaClicada = 5
+        }
+        
+        validacao2()
+        
     }
-    simAlternativa3.onclick = function(){
-        box3.checked = true
-        alterna3()
+}
+
+var chegou
+
+function validacao2() {
+     if(Clicados === 1){
+           chegou = 1
+           
+           colorindo()
+           
+           box1.checked = 0
+           box2.checked = 0
+           box3.checked = 0
+           box4.checked = 0
+           box5.checked = 0
+     }
+     if(Clicados === 0){
+            alert("Por favor escolha alguma das seguintes alternativas:");
+     }
+}
+
+var bolinhas
+var respostasFinal
+var pontuacaoFinal = 0
+var oMenu = document.getElementById('menu')
+var aQuiz = document.getElementById('palavraQuiz')
+var finalIncluido
+
+var bo
+var tiva1 = document.getElementById('alternativa1')
+var tiva2 = document.getElementById('alternativa2')
+var tiva3 = document.getElementById('alternativa3')
+var tiva4 = document.getElementById('alternativa4')
+var tiva5 = document.getElementById('alternativa5')
+
+
+function colorindo() {
+    var o = i +1
+    
+    bolinhas = "p" + o
+    finalIncluido = al[caixaClicada -1]
+    respostasFinal = "box[" + finalIncluido + "]"
+    
+    if(chegou === 1){
+        if(respostasCertas[aleatorio] === respostasFinal){
+            pontuacaoFinal = pontuacaoFinal +1
+            
+            //NÃO TAVA FUNCIONANDO AQ
+            
+            testagem()
+         
+            menu.style.transition="1s"
+            menu.style.backgroundColor="green"
+            palavraQuiz.style.transition="1s"
+            palavraQuiz.style.color="#fff"
+              setTimeout(function(){menu.style.transition="1s"; menu.style.backgroundColor="#fff"; palavraQuiz.style.transition="1s"; palavraQuiz.style.color="#E8000D"; testagemBolinha()},1500)
+            
+        }else{
+            let correta = respostasCertas[aleatorio].replace("box[","")
+            let corretaFinal = correta.replace("]","")
+            let gg = "alt" + corretaFinal
+            
+            testagem()
+           
+            
+            menu.style.transition="1s";
+            menu.style.backgroundColor="red";
+            palavraQuiz.style.transition="1s";
+            palavraQuiz.style.color="#000";
+            
+            if(gg === "alt1") {
+                alt[corretaFinal].style.transition="0,75s";
+            alt[corretaFinal].style.backgroundColor="#50c05ad7";
+            setTimeout(function(){simAlternativa1.style.transition="0,75s"; simAlternativa1.style.backgroundColor="rgb(255, 255, 255, 0.0)"; },1000)
+            }
+            
+            setTimeout(function(){menu.style.transition="1s"; menu.style.backgroundColor="#fff"; palavraQuiz.style.transition="1s"; palavraQuiz.style.color="#E8000D"; testagemBolinha()},1500)
+        }
     }
-    simAlternativa4.onclick = function(){
-        box4.checked = true
-        alterna4()
+    setTimeout(function(){proxima()},2000)
+}
+function testagemBolinha() {
+    if(respostasCertas[aleatorio] === respostasFinal){
+        if(bolinhas === "p1") {
+            p1.style.backgroundColor="green";
+        }
+        if(bolinhas === "p2") {
+            p2.style.backgroundColor="green";
+        }
+        if(bolinhas === "p3") {
+            p3.style.backgroundColor="green";
+        }
+        if(bolinhas === "p4") {
+            p4.style.backgroundColor="green";
+        }
+        if(bolinhas === "p5") {
+            p5.style.backgroundColor="green";
+        }
+        if(bolinhas === "p6") {
+            p6.style.backgroundColor="green";
+        }
+        if(bolinhas === "p7") {
+            p7.style.backgroundColor="green";
+        }
+        if(bolinhas === "p8") {
+            p8.style.backgroundColor="green";
+        }
+        if(bolinhas === "p9") {
+            p9.style.backgroundColor="green";
+        }
+        if(bolinhas === "p10") {
+            p10.style.backgroundColor="green";
+        }
+        
+     }else{
+     
+         if(bolinhas === "p1") {
+            p1.style.backgroundColor="red";
+        }
+        if(bolinhas === "p2") {
+            p2.style.backgroundColor="red";
+        }
+        if(bolinhas === "p3") {
+            p3.style.backgroundColor="red";
+        }
+        if(bolinhas === "p4") {
+            p4.style.backgroundColor="red";
+        }
+        if(bolinhas === "p5") {
+            p5.style.backgroundColor="red";
+        }
+        if(bolinhas === "p6") {
+        p6.style.backgroundColor="red";
+        }
+        if(bolinhas === "p7") {
+            p7.style.backgroundColor="red";
+        }
+        if(bolinhas === "p8") {
+            p8.style.backgroundColor="red";
+        }
+        if(bolinhas === "p9") {
+            p9.style.backgroundColor="red";
+        }
+        if(bolinhas === "p10") {
+            p10.style.backgroundColor="red";
+        }
+     }
+}
+function testagem() {
+     let aAlternativaEscolhida = "simAlternativa" + caixaClicada 
+     
+     if(respostasCertas[aleatorio] === respostasFinal){
+        
+        if(aAlternativaEscolhida === "simAlternativa1") {
+            simAlternativa1.style.transition="0.5s"
+            simAlternativa1.style.backgroundColor="#50c05ad7"
+        setTimeout(function(){simAlternativa1.style.backgroundColor="rgb(255, 255, 255, 0.0)"},1500)
+        }
+        if(aAlternativaEscolhida === "simAlternativa2") {
+                simAlternativa2.style.transition="0.5s"
+            simAlternativa2.style.backgroundColor="#50c05ad7"
+        setTimeout(function(){simAlternativa2.style.backgroundColor="rgb(255, 255, 255, 0.0)"},1500)
+        }
+        if(aAlternativaEscolhida === "simAlternativa3") {
+            simAlternativa3.style.transition="0.5s"
+            simAlternativa3.style.backgroundColor="#50c05ad7"
+        setTimeout(function(){simAlternativa3.style.backgroundColor="rgb(255, 255, 255, 0.0)"},1500)
+        }
+        if(aAlternativaEscolhida === "simAlternativa4") {
+            simAlternativa4.style.transition="0.5s"
+            simAlternativa4.style.backgroundColor="#50c05ad7"
+        setTimeout(function(){simAlternativa4.style.backgroundColor="rgb(255, 255, 255, 0.0)"},1500)
+        }
+        if(aAlternativaEscolhida === "simAlternativa5") {
+            simAlternativa5.style.transition="0.5s"
+        simAlternativa5.style.backgroundColor="#50c05ad7"
+        setTimeout(function(){simAlternativa5.style.backgroundColor="rgb(255, 255, 255, 0.0)"},1500)
+        }
+    }else{
+        if(aAlternativaEscolhida === "simAlternativa1") {
+            simAlternativa1.style.transition="0.5s"
+            simAlternativa1.style.backgroundColor="red"
+        setTimeout(function(){simAlternativa1.style.backgroundColor="rgb(255, 255, 255, 0.0)"},1500)
+        }
+        if(aAlternativaEscolhida === "simAlternativa2") {
+                simAlternativa2.style.transition="0.5s"
+            simAlternativa2.style.backgroundColor="red"
+        setTimeout(function(){simAlternativa2.style.backgroundColor="rgb(255, 255, 255, 0.0)"},1500)
+        }
+        if(aAlternativaEscolhida === "simAlternativa3") {
+            simAlternativa3.style.transition="0.5s"
+            simAlternativa3.style.backgroundColor="red"
+        setTimeout(function(){simAlternativa3.style.backgroundColor="rgb(255, 255, 255, 0.0)"},1500)
+        }
+        if(aAlternativaEscolhida === "simAlternativa4") {
+            simAlternativa4.style.transition="0.5s"
+            simAlternativa4.style.backgroundColor="red"
+        setTimeout(function(){simAlternativa4.style.backgroundColor="rgb(255, 255, 255, 0.0)"},1500)
+        }
+        if(aAlternativaEscolhida === "simAlternativa5") {
+            simAlternativa5.style.transition="0.5s"
+        simAlternativa5.style.backgroundColor="red"
+        setTimeout(function(){simAlternativa5.style.backgroundColor="rgb(255, 255, 255, 0.0)"},1500)
+        }
     }
-    simAlternativa5.onclick = function(){
-        box5.checked = true
-        alterna5()
+    
+}
+
+var chamando0 = document.getElementById('oFinal')
+var chamando1 = document.getElementById('falaFinal')
+var chamando2 = document.getElementById('notaFinal')
+var chamando3 = document.getElementById('textoFinal')
+var clique2 = document.getElementById('botaoReiniciarTudo')
+
+function telaFinal() {
+    let oTemaEscolhido = escolheu.replace("Você escolheu o tema de ","")
+    
+    perguntaTexto.style.display="none"
+    box1.style.display="none"
+    alternativa1.style.display="none"
+    box2.style.display="none";
+    alternativa2.style.display="none"
+    box3.style.display="none"
+    alternativa3.style.display="none"
+    box4.style.display="none";
+    alternativa4.style.display="none"
+    box5.style.display="none";
+    alternativa5.style.display="none"
+    botaoProxima.style.display="none";
+    setTimeout(function(){pontuacao.style.display="none"; linhaPontucao.style.display="none";},2000)
+    
+    oFinal.style.display="block"
+    falaFinal.style.display="block"
+    notaFinal.style.display="block"
+    textoFinal.style.display="block"
+    botaoReiniciarTudo.style.display="block"
+    
+    if(pontuacaoFinal === 0){
+        falaFinal.innerHTML = "Então... sua nota foi:"; notaFinal.innerHTML = pontuacaoFinal + "0" + "/100pts"; textoFinal.innerHTML = "Com certeza você não assite filmes de " + oTemaEscolhido + " com muita frequência..."
+    }
+    if(pontuacaoFinal === 1 || pontuacaoFinal <= 5){
+        falaFinal.innerHTML = "Éhh sua nota foi:"; notaFinal.innerHTML = pontuacaoFinal + "0" + "/100pts"; textoFinal.innerHTML = "Pelo o que eu vi, você não assite conhece muitos filmes de " + oTemaEscolhido + ", mas tudo bem, tente outro tema:"
+    }
+    if(pontuacaoFinal > 5 || pontuacaoFinal <= 7){
+        falaFinal.innerHTML = "Parabéns sua nota foi:"; notaFinal.innerHTML = pontuacaoFinal + "0" + "/100pts"; textoFinal.innerHTML = "Você acertou mais da metade, meus parabéns"
+    }
+    if(pontuacaoFinal > 7) {
+        falaFinal.innerHTML = "Parabéns sua nota foi:"; notaFinal.innerHTML = pontuacaoFinal + "0" + "/100pts"; textoFinal.innerHTML = "Tenho quase certeza que você assiste muitos filmes de " + oTemaEscolhido + " agora tente os outros temas"
     }
 }
 function cliqueFinal() {
+    jo = ["","","","","","","","","",""]
+    sobrePerguntas = ["","","","","","","","","",""]
     pontuacaoFinal = 0
     chegou = 0
-    as = 0
+    as = -1
     i= 0
+    
     p1.style.backgroundColor="rgb(255, 255, 255, 0.0)"; 
     p2.style.backgroundColor="rgb(255, 255, 255, 0.0)"; 
     p3.style.backgroundColor="rgb(255, 255, 255, 0.0)"; 
