@@ -656,11 +656,7 @@ function colorindo() {
             palavraQuiz.style.transition="1s";
             palavraQuiz.style.color="#000";
             
-            if(gg === "alt1") {
-                alt[corretaFinal].style.transition="0,75s";
-            alt[corretaFinal].style.backgroundColor="#50c05ad7";
-            setTimeout(function(){simAlternativa1.style.transition="0,75s"; simAlternativa1.style.backgroundColor="rgb(255, 255, 255, 0.0)"; },1000)
-            }
+            
             
             setTimeout(function(){menu.style.transition="1s"; menu.style.backgroundColor="#fff"; palavraQuiz.style.transition="1s"; palavraQuiz.style.color="#E8000D"; testagemBolinha()},1500)
         }
