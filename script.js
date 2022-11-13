@@ -1,4 +1,4 @@
-const att = "ANIMAÇÃO"
+const att = "AÇÃO e ANIMAÇÃO"
 alert("Agora com o Quiz de " + att +" funcionando ");
 
 
