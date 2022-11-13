@@ -1,9 +1,74 @@
 const att = "ANIMAÇÃO"
+alert("Agora com o Quiz de " + att +" funcionando ");
 
-alert("Agora com o Quiz de " + att +" funcionando");
+
+const horaAtualizacao = 13
+var oHorario = horaAtualizacao -1
+var hoje, hr, min, sec
+var hrNova, minNova, secNova
+
+function tempo(){ 
+    let contagem = document.getElementById('contagemRegressiva')
+    let botaoContagem = document.getElementById('botaoAtt')
+    botaoAtt.style.display = "none"
+    contagemRegressiva.style.display = "block"
+    tempo1()
+}
+function tempo1() {
+    hoje=new Date(); 
+    hr= hoje.getHours(); 
+    min= hoje.getMinutes();
+    sec= hoje.getSeconds();
+    contaOTempo()
+    document.getElementById("contagemRegressiva").innerHTML= hrNova + "h" + minNova + ":" + secNova; 
+    setTimeout('tempo1()',500);
+    contaOTempo()
+}
+function contaOTempo() { 
+     horaLancamento = "13:00 - 14/11/2022"
+     
+     if(hr > oHorario) {
+        hrNova = (24 - hr) + oHorario
+     }
+     if(hr < 12) {
+        hrNova = (24 - hr) - oHorario
+     }
+     if(hr === oHorario){
+         hrNova = (24 - hr)
+     }
+     if(min != 0) {
+         minNova = (60 - min)
+         if(minNova <= 9 ) {
+             minNova = "0" + minNova
+         }
+         if(minNova === 0) {
+             minNova = 60
+         } 
+     }
+     if(sec != 0) {
+         secNova = sec
+         secNova = (60 - sec)
+         if(secNova <= 9 ) {
+             secNova = "0" + secNova
+             
+             if(secNova === "0" +1) {
+                 setTimeout(function(){secNova = "00"},500)
+             }
+         }
+     }
+}
+function tiraTempo() {
+    let contagem = document.getElementById('contagemRegressiva')
+    let botaoContagem = document.getElementById('botaoAtt')
+    botaoAtt.style.display = "block"
+    contagemRegressiva.style.display = "none"
+    
+}
+
 
 var titulorincipal = document.getElementById('titulo')
 var cliqueAqui = document.getElementById('clique')
+var txtDoCmc = document.getElementById('textinho1')
 var asOpcoes = document.getElementById('opcoes')
 var tituloOpcao = document.getElementById('tituloOpcoes')
 var oTema1 = document.getElementById('tema1')
@@ -19,7 +84,7 @@ var oTema9 = document.getElementById('tema9')
 function botaoMenu() {
     clique.style.transition="0.15s"
     clique.style.fontWeight= "600"
-    setTimeout(function(){clique.style.display="none"; titulo.style.display="none"; setTimeout(function() {tituloOpcoes.style.display="block"; setTimeout(function(){tema1.style.display="block"; tema2.style.display="block"; tema3.style.display="block"; tema4.style.display="block"; tema5.style.display="block"; tema6.style.display="block"; tema7.style.display="block"; tema8.style.display="block"; tema9.style.display="block";},500)},500)},1500)
+    setTimeout(function(){clique.style.display="none"; textinho1.style.display="none"; titulo.style.display="none"; setTimeout(function() {tituloOpcoes.style.display="block"; setTimeout(function(){tema1.style.display="block"; tema2.style.display="block"; tema3.style.display="block"; tema4.style.display="block"; tema5.style.display="block"; tema6.style.display="block"; tema7.style.display="block"; tema8.style.display="block"; tema9.style.display="block";},500)},500)},1500)
 
 }
 
