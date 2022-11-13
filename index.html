@@ -3,7 +3,7 @@
     
 <head>
     <meta charset="utf-8"/>
-    <meta name="description" content="tentando_Fazer_Um_Site_Pt5"/>
+    <meta name="description" content="oQuiz"/>
     <meta name="keywords" content="trabalho_De_Pwi"/>
     <meta name="author" content="Roberto Dantas"/>
     <link rel="stylesheet" href="style.css">
@@ -14,10 +14,14 @@
 <body>
     <nav id="menu">
         <img src="logo.png" alt="">
-        <p><a href="" id="palavraQuiz">QUIZ</a></p>
+        <p><a href="" id="palavraQuiz">QUIZ</a></p> 
     </nav>
     <div id="espaco"></div>
     <div id="conteudo">
+        <div id="proximaAtt">
+            <h1 id="contagemRegressiva" onclick="tiraTempo()"></h1>
+            <button onclick="tempo()" id="botaoAtt">Próxima Atualização:</button>
+        </div>
         <div id="pontuacao">
             <table>
                 <tr id="linhaPontucao">
@@ -37,9 +41,13 @@
         </br>
     <div id="conteudoEscrito">
     <div class="titulo" id="titulo">
-        <h2>Você conhece muitos</br>Filmes e Séries?</h2>
+        <h2>Você conhece muitos</br>Filmes?</h2>
     </div>
-    </br></br></br>
+    </br>
+    <div id="textinho1">
+        <p>Não são somente da Netflix!!!</p>
+    </div>
+    </br></br>
     <button onclick="botaoMenu()" id="clique">Faça  o Teste</button>
         <div id="opcoes">
             <h2 id="tituloOpcoes">Escolha uma das</br>categorias a seguir:</h2>            
