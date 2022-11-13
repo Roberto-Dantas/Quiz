@@ -2,8 +2,8 @@ const att = "ANIMAÇÃO"
 alert("Agora com o Quiz de " + att +" funcionando ");
 
 
-const horaAtualizacao = 13
-var oHorario = horaAtualizacao -1
+const horaAtualizacao = 12
+var oHorario = horaAtualizacao
 var hoje, hr, min, sec
 var hrNova, minNova, secNova
 
@@ -25,7 +25,7 @@ function tempo1() {
     contaOTempo()
 }
 function contaOTempo() { 
-     horaLancamento = "13:00 - 14/11/2022"
+     horaLancamento = "12:00 - 14/11/2022"
      
      if(hr > oHorario) {
         hrNova = (24 - hr) + oHorario
