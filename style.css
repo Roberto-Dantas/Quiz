@@ -241,6 +241,7 @@ body{
     position: relative;
     margin-left: auto;
     margin-right: auto;
+    padding: 10px;
 }
 #escolhida h2{
     font-size: 30px;
@@ -268,6 +269,7 @@ body{
 }
 .divPerguntaTexto{
     height: 50px;
+    padding-bottom: 15px;
 }
 .divPerguntaTexto p{
     display:none;
@@ -276,6 +278,7 @@ body{
     font-size: 25px;
     margin-left: 3%;
     margin-right: 3%;
+    
     
 }
 .alternativas table{
