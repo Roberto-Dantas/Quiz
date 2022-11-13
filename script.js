@@ -30,11 +30,17 @@ function contaOTempo() {
      if(hr > oHorario) {
         hrNova = (24 - hr) + oHorario
      }
-     if(hr < 12) {
+     if(hr < oHorario) {
         hrNova = (24 - hr) - oHorario
      }
      if(hr === oHorario){
          hrNova = (24 - hr)
+     }
+     if(hrNova === 0) {
+         let contagem = document.getElementById('contagemRegressiva')
+         let botaoContagem = document.getElementById('botaoAtt')
+         botaoAtt.style.display = "none"
+         contagemRegressiva.style.display = "none"
      }
      if(min != 0) {
          minNova = (60 - min)
