@@ -20,7 +20,7 @@ function tempo1() {
     min= hoje.getMinutes();
     sec= hoje.getSeconds();
     contaOTempo()
-    document.getElementById("contagemRegressiva").innerHTML= hrNova + "h" + minNova + ":" + secNova; 
+    document.getElementById("contagemRegressiva").innerHTML= hrNova + ":" + minNova + ":" + secNova; 
     setTimeout('tempo1()',500);
     contaOTempo()
 }
