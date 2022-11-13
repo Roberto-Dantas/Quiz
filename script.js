@@ -126,7 +126,7 @@ function animacaoQuiz(){
    escolheu = 'Você escolheu o tema de ANIMAÇÃO'
    aPergunta = ["Uma casa que voa:", "Robôs?", "Natal chegando:", "Os Brinquedos tem vida:", "As Hienas são uns dos principais vilões:", "O maior cozinheiro que existe:", "Um vilão-heroi??", "Irmãos gêmeos?", "Idade da Pedra:", "Viajem no tempo:"]
    alt1 = ["Moana", "Encanto", "Klaus", "Procurando Dory", "Viva – A Vida É uma Festa", "Procurando Nemo", "Universidade Monstros", "Shrek Terceiro", "Os Incríveis", "Madagascar"]
-   alt2 = ["Meu Malvado Favorito", "Vida de Inseto", "Luca", "Frozen 2", "Minions 2: A Origem de Gru", "Ratatouille", "Lilo & Stitch", "Gato de Botas", "Os Croods", "Homem-Aranha no Aranhaverso"]
+   alt2 = ["Meu Malvado Favorito", "Vida de Inseto", "Luca", "Frozen 2", "Minions 2: A Origem de Gru", "Ratatouille", "Lilo & Stitch", "Gato de Botas", "Os Croods", "Dumbo"]
    alt3 = ["Up - Altas Aventuras", "A Noiva-Cadáver", "Zootopia", "Toy Story 3", "Aviões", "Soul", "Detona Ralph", "A Era do Gelo 4", "A Dama e o Vagabundo", "A Era do Gelo"]
    alt4 = ["O Estranho Mundo de Jack", "Wall-E", "O Lorax", "Shrek", "Monstros S.A.", "Divertida Mente", "Valente", "Meu Malvado Favorito 3", "O Serviço de Entregas da Kiki", "Irmão Urso"]
    alt5 = ["O Poderoso Chefinho", "Como Treinar o seu Dragão 3", "Tarzan", "Branca de Neve e os Sete Anões", "O Rei Leão", "O Gigante de Ferro", "Tá Chovendo Hambúrguer", "Hotel Transilvânia 3", "Sing", "A Família do Futuro"]
