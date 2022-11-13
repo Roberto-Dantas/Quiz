@@ -47,9 +47,7 @@ function contaOTempo() {
          if(minNova <= 9 ) {
              minNova = "0" + minNova
          }
-         if(minNova === 0) {
-             minNova = 60
-         } 
+         
      }
      if(sec != 0) {
          secNova = sec
