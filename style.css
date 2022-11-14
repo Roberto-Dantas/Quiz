@@ -64,7 +64,6 @@ body{
     border-radius: 15px;
     margin-left: auto; 
     margin-right: auto;
-    
     display: none;
 }
 #pontuacao table{
@@ -113,22 +112,22 @@ body{
     margin-left: 15%;
     float: left;
     z-index: 2;
-    
+    border: 2px #000 solid;
+    box-shadow: 2px 2px 50px #000;
 }
 #contagemRegressiva{
     display: none;
     text-align:center;
     padding: 8px;
-    font-weight: 400;
-    color: #E8000D;
-    background-color: #000;
-    border-radius: 20px;
+    font-weight: 600;
+    color: #000;
+    border-radius: 20px;  
     
 }
 #botaoAtt{
     font-weight: 400;    
     box-shadow: 2px 2px 20px #000;
-    background: #E8000D;
+    background: #000;
     font-size: 17px;
     color: #fff;
     border-radius: 20px;
