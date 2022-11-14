@@ -39,11 +39,13 @@ function contaOTempo() {
          hrNova = (24 - hr)
      }
      if(hrNova < 0) {
-             document.getElementById("contagemRegressiva").innerHTML= "ATUALIZANDO..."
+             document.getElementById("contagemRegressiva").innerHTML= "Atualizando..."
                  let botaoContagem = document.getElementById('botaoAtt')
                  
                  botaoAtt.style.display = "none"
                  contagemRegressiva.style.display = "block"
+                 contagemRegressiva.style.width= "200px"
+                 
                  acabou = 0
              
      }
