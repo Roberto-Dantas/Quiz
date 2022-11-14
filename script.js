@@ -38,8 +38,8 @@ function contaOTempo() {
      if(hr === oHorario){
          hrNova = (24 - hr)
      }
-     if(hrNova === 0) {
-         if(minNova === 0) {
+     if(hrNova === -1) {
+         if(minNova === 59) {
              if(secNova === 0) {
                   document.getElementById("contagemRegressiva").innerHTML= "ATUALIZANDO..."
                  let botaoContagem = document.getElementById('botaoAtt')
