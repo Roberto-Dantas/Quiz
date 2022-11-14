@@ -2,7 +2,7 @@ const att = "AÇÃO e ANIMAÇÃO"
 alert("Agora com o Quiz de " + att +" funcionando ");
 
 const horaAtualizacao = 12
-var oHorario = horaAtualizacao -1
+var oHorario = horaAtualizacao +1
 var hoje, hr, min, sec
 var hrNova, minNova, secNova
 
