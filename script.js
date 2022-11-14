@@ -42,10 +42,14 @@ function contaOTempo() {
          botaoAtt.style.display = "none"
          contagemRegressiva.style.display = "none"
      }
+     
      if(min != 0) {
          minNova = (60 - min)
          if(minNova <= 9 ) {
              minNova = "0" + minNova
+         }
+         if(minNova === 0) {
+             minNova = "6" + minNova
          }
          
      }
@@ -892,16 +896,20 @@ function telaFinal() {
     textoFinal.style.display="block"
     botaoReiniciarTudo.style.display="block"
     
+    
     if(pontuacaoFinal === 0){
         falaFinal.innerHTML = "Então... sua nota foi:"; notaFinal.innerHTML = pontuacaoFinal + "0" + "/100pts"; textoFinal.innerHTML = "Com certeza você não assite filmes de " + oTemaEscolhido + " com muita frequência..."
     }
-    if(pontuacaoFinal === 1 || pontuacaoFinal <= 5){
+    if(pontuacaoFinal === 1 || pontuacaoFinal < 5){
         falaFinal.innerHTML = "Éhh sua nota foi:"; notaFinal.innerHTML = pontuacaoFinal + "0" + "/100pts"; textoFinal.innerHTML = "Pelo o que eu vi, você não assite conhece muitos filmes de " + oTemaEscolhido + ", mas tudo bem, tente outro tema:"
     }
-    if(pontuacaoFinal > 5 || pontuacaoFinal <= 7){
+    if(pontuacaoFinal === 5) {
+        falaFinal.innerHTML = "Parabéns sua nota foi:"; notaFinal.innerHTML = pontuacaoFinal + "0" + "/100pts"; textoFinal.innerHTML = "Você acertou a metade, meus parabéns"
+    }
+    if(pontuacaoFinal === 6 || pontuacaoFinal === 7){
         falaFinal.innerHTML = "Parabéns sua nota foi:"; notaFinal.innerHTML = pontuacaoFinal + "0" + "/100pts"; textoFinal.innerHTML = "Você acertou mais da metade, meus parabéns"
     }
-    if(pontuacaoFinal > 7) {
+    if(pontuacaoFinal >= 8) {
         falaFinal.innerHTML = "Parabéns sua nota foi:"; notaFinal.innerHTML = pontuacaoFinal + "0" + "/100pts"; textoFinal.innerHTML = "Tenho quase certeza que você assiste muitos filmes de " + oTemaEscolhido + " agora tente os outros temas"
     }
 }
