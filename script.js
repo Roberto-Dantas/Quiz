@@ -1,18 +1,20 @@
 const att = "AÇÃO e ANIMAÇÃO"
 alert("Agora com o Quiz de " + att +" funcionando ");
 
-
 const horaAtualizacao = 12
 var oHorario = horaAtualizacao
 var hoje, hr, min, sec
 var hrNova, minNova, secNova
 
+var acabou = 1
 function tempo(){ 
-    let contagem = document.getElementById('contagemRegressiva')
-    let botaoContagem = document.getElementById('botaoAtt')
-    botaoAtt.style.display = "none"
-    contagemRegressiva.style.display = "block"
-    tempo1()
+    if(acabou === 1) {
+        let contagem = document.getElementById('contagemRegressiva')
+        let botaoContagem = document.getElementById('botaoAtt')
+        botaoAtt.style.display = "none"
+        contagemRegressiva.style.display = "block"
+        tempo1() 
+    }
 }
 function tempo1() {
     hoje=new Date(); 
@@ -37,40 +39,39 @@ function contaOTempo() {
          hrNova = (24 - hr)
      }
      if(hrNova === 0) {
-         let contagem = document.getElementById('contagemRegressiva')
-         let botaoContagem = document.getElementById('botaoAtt')
-         botaoAtt.style.display = "none"
-         contagemRegressiva.style.display = "none"
-     }
-     
-     if(min != 0) {
-         minNova = (60 - min)
-         if(minNova <= 9 ) {
-             minNova = "0" + minNova
-         }
          if(minNova === 0) {
-             minNova = "6" + minNova
-         }
-         
-     }
-     if(sec != 0) {
-         secNova = sec
-         secNova = (60 - sec)
-         if(secNova <= 9 ) {
-             secNova = "0" + secNova
-             
-             if(secNova === "0" +1) {
-                 setTimeout(function(){secNova = "00"},500)
+             if(secNova === 0) {
+                  document.getElementById("contagemRegressiva").innerHTML= "ATUALIZANDO..."
+                 let botaoContagem = document.getElementById('botaoAtt')
+                 
+                 botaoAtt.style.display = "none"
+                 contagemRegressiva.style.display = "block"   
              }
          }
      }
+     minNova = (60 - min)
+     if(minNova <= 9 ) {
+        minNova = "0" + minNova
+     }
+     if(minNova === undefined) {
+        minNova = "60"
+     }
+     
+     secNova = (60 - sec)
+     if(secNova <= 9 ) {
+        secNova = "0" + secNova
+     }
+     if(secNova === undefined) {
+       secNova = "60"
+     }
 }
 function tiraTempo() {
-    let contagem = document.getElementById('contagemRegressiva')
-    let botaoContagem = document.getElementById('botaoAtt')
-    botaoAtt.style.display = "block"
-    contagemRegressiva.style.display = "none"
-    
+    if(acabou === 1) {
+        let contagem = document.getElementById('contagemRegressiva')
+        let botaoContagem = document.getElementById('botaoAtt')
+        botaoAtt.style.display = "block"
+        contagemRegressiva.style.display = "none"
+    }
 }
 
 
