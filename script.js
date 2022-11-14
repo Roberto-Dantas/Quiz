@@ -1,7 +1,7 @@
-const att = "AÇÃO e ANIMAÇÃO"
-alert("Agora com o Quiz de " + att +" funcionando ");
+const att = "\n-AÇÃO\n-ANIMAÇÃO\n-AVENTURA\n-FICÇÃO"
+alert("Agora com os Quiz:\n" + att +"\n");
 
-const horaAtualizacao = 12
+const horaAtualizacao = 11
 var oHorario = horaAtualizacao +1
 var hoje, hr, min, sec
 var hrNova, minNova, secNova
@@ -27,7 +27,7 @@ function tempo1() {
     contaOTempo()
 }
 function contaOTempo() { 
-     horaLancamento = "12:00 - 14/11/2022"
+     horaLancamento = "13:00 - 15/11/2022"
      
      if(hr > oHorario) {
         hrNova = (24 - hr) + oHorario
@@ -43,6 +43,7 @@ function contaOTempo() {
                  let botaoContagem = document.getElementById('botaoAtt')
                  
                  botaoAtt.style.display = "none"
+                 clique.style.display="none"; textinho1.style.display="none"; titulo.style.display="none";
                  contagemRegressiva.style.display = "block"
                  contagemRegressiva.style.width= "200px"
                  
@@ -54,7 +55,7 @@ function contaOTempo() {
         minNova = "0" + minNova
      }
      if(minNova === undefined) {
-        minNova = "60"
+        minNova = "00"
      }
      
      secNova = (60 - sec)
@@ -62,7 +63,7 @@ function contaOTempo() {
         secNova = "0" + secNova
      }
      if(secNova === undefined) {
-       secNova = "60"
+       secNova = "00"
      }
 }
 function tiraTempo() {
@@ -143,13 +144,13 @@ function aventuraQuiz(){
     opcoes.style.display="none"
    
    escolheu = 'Você escolheu o tema de AVENTURA'
-   aPergunta = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   alt1 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   alt2 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   alt3 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   alt4 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   alt5 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   respostasCertas = [""]
+   aPergunta = ["Qual desses é uma aventura no espaço?", "Quase que uma aventura de carros:", "Um filme com muitos Easters Eggs:", "Labirintos é com eles:", "Apenas um livro causou tudo isso:", "Um jogo causou toda essa aventura:", "Um filme muito clássico, e obrigatório a todas as idades:", "O personagem principal é conhecido por ser muito baixo:", "Goblins do lado de fora?", "Segundo eles, somos trouxas:"]
+   alt1 = ["Sonic: O Filme", "Lightyear", "Free Guy", "Liga da Justiça", "Piratas do Caribe", "Jumanji: Próxima Fase", "Venom", "Zathura", "Aquaman", "As Crônicas de Nárnia"]
+   alt2 = ["Passageiros", "Mortal Kombat", "Os Croods 2", "Red: Crescer é uma Fera", "Animais Fantásticos", "O Predador: A Caçada", "Alita: Anjo de Combate", "A Bússola de Ouro", "Assassin's Creed", "Tomb Raider"]
+   alt3 = ["Cidade Perdida", "DC Liga dos Superpets", "O Chamado da Floresta", "De Volta para o Futuro", "Mogli: Entre dois mundos", "O auto da Comparecida", "O Pequeno Príncipe", "Viajem ao centro da Terra", "Coração de Tinta", "Jack, o Caçador de Gigantes"]
+   alt4 = ["Jurassic World: Domínio", "Duna", "Luca", "Maze Runner: Correr ou Morrer", "Era do gelo 3", "Percy Jackson", "Velozes e Furiosos 8", "Deuses do Egito", "As Crônicas de Spiderwick", "Jogos Vorazes"]
+   alt5 = ["Uncharted: Fora do Mapa", "Velozes e Furiosos 9", "Viva – A Vida É uma Festa", "Minions 2", "Goosebumps: Monstros e Arrepios", "Senhor dos Anéis", "Amor e Montros", "O Hobbit", "O Último Mestre do Ar", "Harry Potter"]
+   respostasCertas = ["box[2]","box[5]", "box[1]","box[4]","box[5]","box[1]","box[3]","box[5]","box[4]","box[5]"]
    
     qualEscolheu.innerHTML= escolheu
     setTimeout(function(){escolhida.style.display="block"; botao2.style.display="block"; qualEscolheu.style.display="block"; explicacaoQuiz.style.display="block"; botao1.style.display="block"},500)
@@ -175,13 +176,13 @@ function ficcaoQuiz() {
     opcoes.style.display="none"
    
    escolheu = 'Você escolheu o tema de FICÇÃO'
-   aPergunta = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   alt1 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   alt2 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   alt3 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   alt4 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   alt5 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   respostasCertas = [""]
+   aPergunta = ["Toda vez que morre, o mundo reseta:", "Determinado a matar a personagem principal:", "Cuidado que a Lua esta vindo em direção a Terra:", "Qual desses não é um filme clássico para assistir:", "Clonagem existe:", "A história principal se inicia num contrabando de drogas:", "Robôs podem se transformar em carros:", "Robô acaba criando vida, personalidade, e uma alma?", "O principal acaba sendo puxado a um mundo cibernético:", "Qual dos filmes, animais selvagens se tornam mil vezes maior?"]
+   alt1 = ["A Chegada", "WALL·E", "Oblivion", "Aniquilação", "Chappie", "MIB³ - Homens de Preto 3", "Jogos Vorazes", "Pantera Negra", "Não! Não Olhe!", "Interestelar"]
+   alt2 = ["Distrito 9", "A.I. - Inteligência Artificial", "Jogador Nº 1", "Jurassic Park", "Projeto Gemini", "Perdido em Marte", "Mad Max: Estrada da Fúria", "Matrix Resurrections", "Tron - O Legado", "Alita: Anjo de Combate"]
+   alt3 = ["Planeta dos Macacos", "O Exterminador do Futuro", "Moonfall", "De Volta Para o Futuro", "Independence Day", "Godzilla vs Kong", "O Dia Depois de Amanhã", "Star Wars: O Despertar da Força", "John Carter - Entre Dois Mundos", "A 5ª Onda"]
+   alt4 = ["Ad Astra - Rumo às Estrelas", "Free Guy", "Tenet", "Matrix", "Depois da Terra", "Maze Runner: A Cura Mortal", "Transformers: O Último Cavaleiro", "Looper - Assassinos do Futuro", "Morbius", "Rampage: Destruição Total"]
+   alt5 = ["No Limite do Amanhã", "Círculo de Fogo", "Expresso do Amanhã", "E.T. O Extraterrestre", "Lunar", "Lucy", "Duna", "Eu, Robô", "Capitã Marvel", "Quarteto Fantástico 2"]
+   respostasCertas = ["box[5]","box[3]", "box[3]","box[1]","box[2]","box[5]","box[4]","box[5]","box[2]","box[4]"]
    
     qualEscolheu.innerHTML= escolheu
     setTimeout(function(){escolhida.style.display="block"; botao2.style.display="block"; qualEscolheu.style.display="block"; explicacaoQuiz.style.display="block"; botao1.style.display="block"},500)
@@ -899,16 +900,16 @@ function telaFinal() {
     
     
     if(pontuacaoFinal === 0){
-        falaFinal.innerHTML = "Então... sua nota foi:"; notaFinal.innerHTML = pontuacaoFinal + "0" + "/100pts"; textoFinal.innerHTML = "Com certeza você não assite filmes de " + oTemaEscolhido + " com muita frequência..."
+        falaFinal.innerHTML = "Então... sua nota foi:"; notaFinal.innerHTML = pontuacaoFinal + "0" + "/100pts"; textoFinal.innerHTML = "Com certeza você assiste quase nada de filmes de " + oTemaEscolhido + " mas tente outro tema ai..."
     }
     if(pontuacaoFinal === 1 || pontuacaoFinal < 5){
-        falaFinal.innerHTML = "Éhh sua nota foi:"; notaFinal.innerHTML = pontuacaoFinal + "0" + "/100pts"; textoFinal.innerHTML = "Pelo o que eu vi, você não assite conhece muitos filmes de " + oTemaEscolhido + ", mas tudo bem, tente outro tema:"
+        falaFinal.innerHTML = "Éhh sua nota foi:"; notaFinal.innerHTML = pontuacaoFinal + "0" + "/100pts"; textoFinal.innerHTML = "Pelo o que eu vi, você não assiste ou conhece muitos filmes de " + oTemaEscolhido + ", mas tudo bem, tente outro tema:"
     }
     if(pontuacaoFinal === 5) {
-        falaFinal.innerHTML = "Parabéns sua nota foi:"; notaFinal.innerHTML = pontuacaoFinal + "0" + "/100pts"; textoFinal.innerHTML = "Você acertou a metade, meus parabéns"
+        falaFinal.innerHTML = "Parabéns sua nota foi:"; notaFinal.innerHTML = pontuacaoFinal + "0" + "/100pts"; textoFinal.innerHTML = "Você acertou a metade, meus parabéns, já pode ir pro próximo tema"
     }
     if(pontuacaoFinal === 6 || pontuacaoFinal === 7){
-        falaFinal.innerHTML = "Parabéns sua nota foi:"; notaFinal.innerHTML = pontuacaoFinal + "0" + "/100pts"; textoFinal.innerHTML = "Você acertou mais da metade, meus parabéns"
+        falaFinal.innerHTML = "Parabéns sua nota foi:"; notaFinal.innerHTML = pontuacaoFinal + "0" + "/100pts"; textoFinal.innerHTML = "Você acertou mais da metade, meus parabéns, já pode ir pro próximo tema"
     }
     if(pontuacaoFinal >= 8) {
         falaFinal.innerHTML = "Parabéns sua nota foi:"; notaFinal.innerHTML = pontuacaoFinal + "0" + "/100pts"; textoFinal.innerHTML = "Tenho quase certeza que você assiste muitos filmes de " + oTemaEscolhido + " agora tente os outros temas"
