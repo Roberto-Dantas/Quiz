@@ -1,8 +1,8 @@
 const att = "\n-AÇÃO\n-ANIMAÇÃO\n-AVENTURA\n-FICÇÃO"
 alert("Agora com os Quiz:\n" + att +"\n");
 
-const horaAtualizacao = 11
-var oHorario = horaAtualizacao +1
+const horaAtualizacao = 13
+var oHorario = horaAtualizacao 
 var hoje, hr, min, sec
 var hrNova, minNova, secNova
 
@@ -22,15 +22,17 @@ function tempo1() {
     min= hoje.getMinutes();
     sec= hoje.getSeconds();
     contaOTempo()
+   if(acabou === 1) {
+       
     document.getElementById("contagemRegressiva").innerHTML= hrNova + ":" + minNova + ":" + secNova; 
     setTimeout('tempo1()',500);
-    contaOTempo()
+    }
 }
 function contaOTempo() { 
      horaLancamento = "13:00 - 15/11/2022"
      
      if(hr > oHorario) {
-        hrNova = (24 - hr) + oHorario
+        hrNova = (24 - hr) - oHorario
      }
      if(hr < oHorario) {
         hrNova = (24 - hr) - oHorario
@@ -39,16 +41,22 @@ function contaOTempo() {
          hrNova = (24 - hr)
      }
      if(hrNova < 0) {
-             document.getElementById("contagemRegressiva").innerHTML= "Atualizando..."
-                 let botaoContagem = document.getElementById('botaoAtt')
+             hrNova = "0" + 0
+             if(minNova === 0) {
                  
+                 let caixaAtualizando = document.getElementById('proximaAtt')
+                 let botaoContagem = document.getElementById('botaoAtt')
+                 var agoraVai = document.getElementById("contagemRegressiva").innerHTML= "Atualizando..."
                  botaoAtt.style.display = "none"
                  clique.style.display="none"; textinho1.style.display="none"; titulo.style.display="none";
+                 proximaAtt.style.width= "200px"
                  contagemRegressiva.style.display = "block"
                  contagemRegressiva.style.width= "200px"
                  
                  acabou = 0
              
+             }
+                 
      }
      minNova = (60 - min)
      if(minNova <= 9 ) {
@@ -307,7 +315,7 @@ function proxima() {
         al[kol] = ordemAlternativas
     }
     perguntaTexto.innerHTML = aPergunta[aleatorio]
-    console.log(respostasCertas[aleatorio])
+    
     
     pontuacao.style.display="none"
     linhaPontucao.style.display="none"
@@ -723,12 +731,10 @@ function colorindo() {
               setTimeout(function(){menu.style.transition="1s"; menu.style.backgroundColor="#fff"; palavraQuiz.style.transition="1s"; palavraQuiz.style.color="#E8000D"; testagemBolinha()},1500)
             
         }else{
-            let correta = respostasCertas[aleatorio].replace("box[","")
-            let corretaFinal = correta.replace("]","")
-            let gg = "alt" + corretaFinal
             
             testagem()
-           
+              
+            pintandoACertaNaErrada()
             
             menu.style.transition="1s";
             menu.style.backgroundColor="red";
@@ -867,6 +873,89 @@ function testagem() {
         }
     }
     
+}
+
+
+var corretaFinal
+var correta
+var corretaFinal1 
+var simAlternativa
+
+function pintandoACertaNaErrada() {
+    correta = respostasCertas[aleatorio].replace("box[","")
+    corretaFinal1 = correta.replace("]","")
+    
+    numero()
+    
+    if(corretaFinal === al[0]) {
+        corretaFinal = 1
+        numeroAlternativa()
+    }
+    if(corretaFinal === al[1]) {
+        corretaFinal = 2
+        numeroAlternativa()
+    }
+    if(corretaFinal === al[2]) {
+        corretaFinal = 3
+        numeroAlternativa()
+    }
+    if(corretaFinal === al[3]) {
+        corretaFinal = 4
+        numeroAlternativa()
+    }
+    if(corretaFinal === al[4]) {
+        corretaFinal = 5
+        numeroAlternativa()
+    }
+}
+function numero() {
+    if(corretaFinal1 === "1") {
+        corretaFinal = 1
+    }
+    if(corretaFinal1 === "2") {
+        corretaFinal = 2
+    }
+    if(corretaFinal1 === "3") {
+        corretaFinal = 3
+    }
+    if(corretaFinal1 === "4") {
+        corretaFinal = 4
+    }
+    if(corretaFinal1 === "5") {
+        corretaFinal = 5
+    }
+}
+function numeroAlternativa() {
+    if(corretaFinal === 1) {
+        simAlternativa1.style.transition="0.5s"
+        simAlternativa1.style.backgroundColor="#50c05ad7"
+        setTimeout(function(){simAlternativa1.style.backgroundColor="rgb(255, 255, 255, 0.0)"},1500)
+        corretaFinal = undefined
+    }
+    if(corretaFinal === 2) {
+        simAlternativa2.style.transition="0.5s"
+        simAlternativa2.style.backgroundColor="#50c05ad7"
+        setTimeout(function(){simAlternativa2.style.backgroundColor="rgb(255, 255, 255, 0.0)"},1500)
+        corretaFinal = undefined
+    }
+    if(corretaFinal === 3) {
+        simAlternativa3.style.transition="0.5s"
+        simAlternativa3.style.backgroundColor="#50c05ad7"
+        setTimeout(function(){simAlternativa3.style.backgroundColor="rgb(255, 255, 255, 0.0)"},1500)
+        corretaFinal = undefined
+    }
+    if(corretaFinal === 4) {
+        simAlternativa4.style.transition="0.5s"
+        simAlternativa4.style.backgroundColor="#50c05ad7"
+        setTimeout(function(){simAlternativa4.style.backgroundColor="rgb(255, 255, 255, 0.0)"},1500)
+        corretaFinal = undefined
+    }
+    if(corretaFinal === 5) {
+        simAlternativa5.style.transition="0.5s"
+        simAlternativa5.style.backgroundColor="#50c05ad7"
+        setTimeout(function(){simAlternativa5.style.backgroundColor="rgb(255, 255, 255, 0.0)"},1500)
+        corretaFinal = undefined
+    }
 }
 
 var chamando0 = document.getElementById('oFinal')
