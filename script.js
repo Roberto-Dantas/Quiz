@@ -1,8 +1,11 @@
 const att = "\n-AÇÃO\n-ANIMAÇÃO\n-AVENTURA\n-FICÇÃO"
 alert("Agora com os Quiz:\n" + att +"\n");
 
-const horaAtualizacao = 13
-var oHorario = horaAtualizacao 
+horaLancamento = "12:00 - 16/11/2022"
+const horaAtt = 12
+const diaAtt = 16
+
+var oHorario = horaAtt 
 var hoje, hr, min, sec
 var hrNova, minNova, secNova
 
@@ -17,7 +20,8 @@ function tempo(){
     }
 }
 function tempo1() {
-    hoje=new Date(); 
+    hoje=new Date();
+    oDia= hoje.getDate()
     hr= hoje.getHours(); 
     min= hoje.getMinutes();
     sec= hoje.getSeconds();
@@ -28,22 +32,26 @@ function tempo1() {
     setTimeout('tempo1()',500);
     }
 }
+
 function contaOTempo() { 
-     horaLancamento = "13:00 - 15/11/2022"
      
-     if(hr > oHorario) {
-        hrNova = (24 - hr) - oHorario
-     }
-     if(hr < oHorario) {
-        hrNova = (24 - hr) - oHorario
-     }
-     if(hr === oHorario){
-         hrNova = (24 - hr)
-     }
-     if(hrNova < 0) {
+     if(oDia === diaAtt) {
+        
+        if(hr > oHorario) {
+            hrNova = 24 - (hr - oHorario) -1
+            if(hrNova < 0) {
+                hrNova = 24 + (hrNova + hrNova)
+            }
+        }
+        if(hr < oHorario) {
+            hrNova = (oHorario - hr) -1
+            if(hrNova < 0) {
+                 hrNova = 24 + (hrNova + hrNova)
+             }
+         }
+         if(hr === oHorario) {
              hrNova = "0" + 0
              if(minNova === 0) {
-                 
                  let caixaAtualizando = document.getElementById('proximaAtt')
                  let botaoContagem = document.getElementById('botaoAtt')
                  var agoraVai = document.getElementById("contagemRegressiva").innerHTML= "Atualizando..."
@@ -52,12 +60,34 @@ function contaOTempo() {
                  proximaAtt.style.width= "200px"
                  contagemRegressiva.style.display = "block"
                  contagemRegressiva.style.width= "200px"
-                 
                  acabou = 0
-             
              }
-                 
+         }
+     }else{
+        let daquiQuantosDias = diaAtt - oDia
+        daquiQuantosDias = daquiQuantosDias * 24
+         
+        console.log(daquiQuantosDias);
+         
+        if(hr > oHorario) {
+            hrNova = daquiQuantosDias - (hr - oHorario) -1
+           if(hrNova < 0) {
+                hrNova = daquiQuantosDias + (hrNova + hrNova)
+           }
+        }
+        if(hr < oHorario) {
+            hrNova = daquiQuantosDias - (oHorario - hr) -1
+            if(hrNova < 0) {
+                 hrNova = daquiQuantosDias + (hrNova + hrNova)
+             }
+         }
+         if(hr === oHorario) {
+             hrNova = daquiQuantosDias -1
+             console.log(daquiQuantosDias);
+         }
+         
      }
+     
      minNova = (60 - min)
      if(minNova <= 9 ) {
         minNova = "0" + minNova
@@ -102,7 +132,7 @@ var oTema9 = document.getElementById('tema9')
 function botaoMenu() {
     clique.style.transition="0.15s"
     clique.style.fontWeight= "600"
-    setTimeout(function(){clique.style.display="none"; textinho1.style.display="none"; titulo.style.display="none"; setTimeout(function() {tituloOpcoes.style.display="block"; setTimeout(function(){tema1.style.display="block"; tema2.style.display="block"; tema3.style.display="block"; tema4.style.display="block"; tema5.style.display="block"; tema6.style.display="block"; tema7.style.display="block"; tema8.style.display="block"; tema9.style.display="block";},500)},500)},1500)
+    setTimeout(function(){tempo1(); clique.style.display="none"; textinho1.style.display="none"; titulo.style.display="none"; setTimeout(function() {tituloOpcoes.style.display="block"; setTimeout(function(){tema1.style.display="block"; tema2.style.display="block"; tema3.style.display="block"; tema4.style.display="block"; tema5.style.display="block"; tema6.style.display="block"; tema7.style.display="block"; tema8.style.display="block"; tema9.style.display="block";},500)},500)},1500)
 
 }
 
@@ -266,11 +296,12 @@ var i = 0
 function iniciar(){
     escolhida.style.display='none'
     i = i -1
-    
+    tempo1()
     proxima()
 }
 function voltar(){
     escolhida.style.display='none'
+    tempo1()
     setTimeout(function(){opcoes.style.display="block"},500)
 }
 
@@ -298,7 +329,7 @@ function proxima() {
     i = i +1
     al = ["","","","",""]
     
-    ;
+    tempo1()
     
     if(i === 10){
          
