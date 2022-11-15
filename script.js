@@ -56,7 +56,7 @@ function contaOTempo() {
                  let botaoContagem = document.getElementById('botaoAtt')
                  var agoraVai = document.getElementById("contagemRegressiva").innerHTML= "Atualizando..."
                  botaoAtt.style.display = "none"
-                 clique.style.display="none"; textinho1.style.display="none"; titulo.style.display="none";
+                 
                  proximaAtt.style.width= "200px"
                  contagemRegressiva.style.display = "block"
                  contagemRegressiva.style.width= "200px"
