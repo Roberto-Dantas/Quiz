@@ -2,7 +2,7 @@ const att = "\n-AÇÃO\n-ANIMAÇÃO\n-AVENTURA\n-FICÇÃO"
 alert("Agora com os Quiz:\n" + att +"\n");
 
 horaLancamento = "12:00 - 16/11/2022"
-const horaAtt = 12
+const horaAtt = 15
 const diaAtt = 16
 
 var oHorario = horaAtt 
