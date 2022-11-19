@@ -1,119 +1,6 @@
 const att = "\n-AÇÃO\n-ANIMAÇÃO\n-AVENTURA\n-FICÇÃO"
 alert("Agora com os Quiz:\n" + att +"\n");
 
-horaLancamento = "15:00 - 16/11/2022"
-const horaAtt = 15
-const diaAtt = 16
-
-var oHorario = horaAtt 
-var hoje, hr, min, sec
-var hrNova, minNova, secNova
-
-var acabou = 1
-function tempo(){ 
-    if(acabou === 1) {
-        let contagem = document.getElementById('contagemRegressiva')
-        let botaoContagem = document.getElementById('botaoAtt')
-        botaoAtt.style.display = "none"
-        contagemRegressiva.style.display = "block"
-        tempo1() 
-    }
-}
-function tempo1() {
-    hoje=new Date();
-    oDia= hoje.getDate()
-    hr= hoje.getHours(); 
-    min= hoje.getMinutes();
-    sec= hoje.getSeconds();
-    contaOTempo()
-   if(acabou === 1) {
-       
-    document.getElementById("contagemRegressiva").innerHTML= hrNova + ":" + minNova + ":" + secNova; 
-    setTimeout('tempo1()',500);
-    }
-}
-
-function contaOTempo() { 
-     
-     if(oDia === diaAtt) {
-        
-        if(hr > oHorario) {
-            hrNova = 24 - (hr - oHorario) -1
-            if(hrNova < 0) {
-                hrNova = 24 + (hrNova + hrNova)
-            }
-        }
-        if(hr < oHorario) {
-            hrNova = (oHorario - hr) -1
-            if(hrNova < 0) {
-                 hrNova = 24 + (hrNova + hrNova)
-             }
-         }
-         if(hr === oHorario) {
-             hrNova = "0" + 0
-             if(minNova === 0) {
-                 let caixaAtualizando = document.getElementById('proximaAtt')
-                 let botaoContagem = document.getElementById('botaoAtt')
-                 var agoraVai = document.getElementById("contagemRegressiva").innerHTML= "Atualizando..."
-                 botaoAtt.style.display = "none"
-                 
-                 proximaAtt.style.width= "200px"
-                 contagemRegressiva.style.display = "block"
-                 contagemRegressiva.style.width= "200px"
-                 acabou = 0
-             }
-         }
-     }else{
-        let daquiQuantosDias = diaAtt - oDia
-        daquiQuantosDias = daquiQuantosDias * 24
-         
-        console.log(daquiQuantosDias);
-         
-        if(hr > oHorario) {
-            hrNova = daquiQuantosDias - (hr - oHorario) -1
-           if(hrNova < 0) {
-                hrNova = daquiQuantosDias + (hrNova + hrNova)
-           }
-        }
-        if(hr < oHorario) {
-            hrNova = daquiQuantosDias - (oHorario - hr) -1
-            if(hrNova < 0) {
-                 hrNova = daquiQuantosDias + (hrNova + hrNova)
-             }
-         }
-         if(hr === oHorario) {
-             hrNova = daquiQuantosDias -1
-             console.log(daquiQuantosDias);
-         }
-         
-     }
-     
-     minNova = (60 - min)
-     if(minNova <= 9 ) {
-        minNova = "0" + minNova
-     }
-     if(minNova === undefined) {
-        minNova = "00"
-     }
-     
-     secNova = (60 - sec)
-     if(secNova <= 9 ) {
-        secNova = "0" + secNova
-     }
-     if(secNova === undefined) {
-       secNova = "00"
-     }
-}
-function tiraTempo() {
-    if(acabou === 1) {
-        let contagem = document.getElementById('contagemRegressiva')
-        let botaoContagem = document.getElementById('botaoAtt')
-        botaoAtt.style.display = "block"
-        contagemRegressiva.style.display = "none"
-    }
-}
-
-
 var titulorincipal = document.getElementById('titulo')
 var cliqueAqui = document.getElementById('clique')
 var txtDoCmc = document.getElementById('textinho1')
@@ -132,7 +19,7 @@ var oTema9 = document.getElementById('tema9')
 function botaoMenu() {
     clique.style.transition="0.15s"
     clique.style.fontWeight= "600"
-    setTimeout(function(){tempo1(); clique.style.display="none"; textinho1.style.display="none"; titulo.style.display="none"; setTimeout(function() {tituloOpcoes.style.display="block"; setTimeout(function(){tema1.style.display="block"; tema2.style.display="block"; tema3.style.display="block"; tema4.style.display="block"; tema5.style.display="block"; tema6.style.display="block"; tema7.style.display="block"; tema8.style.display="block"; tema9.style.display="block";},500)},500)},1500)
+    setTimeout(function(){; clique.style.display="none"; textinho1.style.display="none"; titulo.style.display="none"; setTimeout(function() {tituloOpcoes.style.display="block"; setTimeout(function(){tema1.style.display="block"; tema2.style.display="block"; tema3.style.display="block"; tema4.style.display="block"; tema5.style.display="block"; tema6.style.display="block"; tema7.style.display="block"; tema8.style.display="block"; tema9.style.display="block";},500)},500)},1500)
 
 }
 
@@ -296,12 +183,10 @@ var i = 0
 function iniciar(){
     escolhida.style.display='none'
     i = i -1
-    tempo1()
     proxima()
 }
 function voltar(){
     escolhida.style.display='none'
-    tempo1()
     setTimeout(function(){opcoes.style.display="block"},500)
 }
 
@@ -329,7 +214,6 @@ function proxima() {
     i = i +1
     al = ["","","","",""]
     
-    tempo1()
     
     if(i === 10){
          
