@@ -1,6 +1,7 @@
 const att = "\n-AÇÃO\n-ANIMAÇÃO\n-AVENTURA\n-FICÇÃO"
 alert("Agora com os Quiz:\n" + att +"\n");
 
+
 var titulorincipal = document.getElementById('titulo')
 var cliqueAqui = document.getElementById('clique')
 var txtDoCmc = document.getElementById('textinho1')
