@@ -19,7 +19,7 @@ body{
     color: #000;
     text-align: center;
     box-shadow: 2px 2px 50px #000;
-    z-index: 1;
+    z-index: 3;
 }
 #menu img{
     height: 70px;
@@ -103,40 +103,8 @@ body{
     z-index: 1;
     
 }
-#proximaAtt{
-    background: rgb(255, 255, 255, 0.8);
-    height: 50px;
-    width: 150px;
-    position: relative;
-    border-radius: 20px;
-    margin-left: 15%;
-    float: left;
-    z-index: 2;
-    border: 2px #000 solid;
-    box-shadow: 2px 2px 50px #000;
-}
-#contagemRegressiva{
-    display: none;
-    text-align:center;
-    padding: 8px;
-    font-weight: 600;
-    color: #000;
-    border-radius: 20px;  
-    
-}
-#botaoAtt{
-    font-weight: 400;    
-    box-shadow: 2px 2px 20px #000;
-    background: #000;
-    font-size: 17px;
-    color: #fff;
-    border-radius: 20px;
-    padding: 8px;
-    margin-left: auto; 
-    margin-right: auto;
-    text-align: center;
-    display: block;
-}
+
+
 .titulo{
     position: relative;
     color: #000;
@@ -249,7 +217,7 @@ body{
     font-size: 30px;
     display: none;
     color: #E8000D;
-    font-weight: 800;
+    font-weight: 700;
     margin-left:15%;
     margin-right:15%;
     padding-top: 7%;
@@ -276,7 +244,7 @@ body{
 .divPerguntaTexto p{
     display:none;
     color: #E8000D;
-    font-weight: 800;
+    font-weight: 700;
     font-size: 25px;
     margin-left: 3%;
     margin-right: 3%;
@@ -294,6 +262,7 @@ body{
     padding: 6px;
     height: 25px;
     border-radius: 15px;
+    font-weight: 500;
 }
 #simAlternativa5, #simAlternativa4, #simAlternativa3, #simAlternativa2, #simAlternativa1{
     
@@ -393,5 +362,4 @@ footer p{
     color: #E8000D;
     text-align: center;
     font-size: 30;
-    margin:;
 }
