@@ -1,4 +1,4 @@
-const att = "\n-AÇÃO\n-ANIMAÇÃO\n-AVENTURA\n-FICÇÃO"
+const att = "\n-AÇÃO\n-ANIMAÇÃO\n-AVENTURA\n-FICÇÃO\n-COMÉDIA"
 alert("Agora com os Quiz:\n" + att +"\n");
 
 
@@ -86,13 +86,13 @@ function comediaQuiz() {
     opcoes.style.display="none"
    
    escolheu = 'Você escolheu o tema de COMÉDIA'
-   aPergunta = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   alt1 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   alt2 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   alt3 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   alt4 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   alt5 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   respostasCertas = [""]
+   aPergunta = ["Um heroi?", "Dois malucos:", "Mas que filme bom:", "Lição de vida:", "Um grande Clássico:", "Amigos até depois de se casarem:", "O filme é caro só por ter esse ator lá:", "Animais Extintos??", "Varios jogos na vida real:", "Ganhou na loteria:"]
+   alt1 = ["Gente grande", "Alerta Vermelho", "Um Príncipe em Nova York 2", "Click", "Se Beber, Não Case!", "Todo mundo Quase morto", "Minha Mãe é uma Peça", "A Era do Gelo 3", "Cabras da Peste", "WIFI Ralph"]
+   alt2 = ["Deadpool", "O Grinch", "Bons de Bico", "Esqueceram de Mim", "As Branquelas", "Minha Mãe é uma Peça 3", "Vai que Cola 2", "Hotel Transilvânia 3", "Pixels", "Os Salafrários"]
+   alt3 = ["Ted", "Zumbilândia", "A Família Addams", "De férias da Família", "O Homem de Toronto", "O Auto da Compadecida", "Tô Ryca", "O Filho do Máskara", "Jungle Cruise", "Até que a Sorte nos Separe"]
+   alt4 = ["Férias da Família Johnson", "Debi & Loide 2", "Um Espião e Meio", "Minions 2", "Space Jam: Um Novo Legado", "Gente Grande", "Dolittle", "A Chefinha", "Tudo Bem no Natal Que Vem", "Turma da Mônica: Laços"]
+   alt5 = ["Tudo por um Popstar", "Free Guy", "As Mil Palavras", "Hancock", "O Ditador", "Trolls", "Os Farofeiros", "O Poderoso Chefinho", "Cada Um Tem a Gêmea Que Merece", "Não Olhe para Cima"]
+   respostasCertas = ["box[2]","box[4]", "box[5]","box[1]","box[2]","box[4]","box[4]","box[1]","box[2]","box[3]"]
    
     qualEscolheu.innerHTML= escolheu
     setTimeout(function(){escolhida.style.display="block"; botao2.style.display="block"; qualEscolheu.style.display="block"; explicacaoQuiz.style.display="block"; botao1.style.display="block"},500)
