@@ -91,7 +91,7 @@ function comediaQuiz() {
    alt2 = ["Deadpool", "O Grinch", "Bons de Bico", "Esqueceram de Mim", "As Branquelas", "Minha Mãe é uma Peça 3", "Vai que Cola 2", "Hotel Transilvânia 3", "Pixels", "Os Salafrários"]
    alt3 = ["Ted", "Zumbilândia", "A Família Addams", "De férias da Família", "O Homem de Toronto", "O Auto da Compadecida", "Tô Ryca", "O Filho do Máskara", "Jungle Cruise", "Até que a Sorte nos Separe"]
    alt4 = ["Férias da Família Johnson", "Debi & Loide 2", "Um Espião e Meio", "Minions 2", "Space Jam: Um Novo Legado", "Gente Grande", "Dolittle", "A Chefinha", "Tudo Bem no Natal Que Vem", "Turma da Mônica: Laços"]
-   alt5 = ["Tudo por um Popstar", "Free Guy", "As Mil Palavras", "Hancock", "O Ditador", "Trolls", "Os Farofeiros", "O Poderoso Chefinho", "Cada Um Tem a Gêmea Que Merece", "Não Olhe para Cima"]
+   alt5 = ["Tudo por um Popstar", "Free Guy", "As Mil Palavras", "Hancock", "O Ditador", "Trolls", "Os Farofeiros", "O Poderoso Chefinho", "Debi & Loide", "Não Olhe para Cima"]
    respostasCertas = ["box[2]","box[4]", "box[5]","box[1]","box[2]","box[4]","box[4]","box[1]","box[2]","box[3]"]
    
     qualEscolheu.innerHTML= escolheu
