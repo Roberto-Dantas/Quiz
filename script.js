@@ -101,7 +101,7 @@ function comediaQuiz() {
 function dramaQuiz() {
     opcoes.style.display="none"
    
-   escolheu = 'Você escolheu o tema de SUSPENSE'
+   escolheu = 'Você escolheu o tema de DRAMA'
    aPergunta = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
    alt1 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
    alt2 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
