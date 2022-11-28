@@ -1,4 +1,4 @@
-const att = "\n-AÇÃO\n-ANIMAÇÃO\n-AVENTURA\n-FICÇÃO\n-COMÉDIA"
+const att = "\n-AÇÃO\n-ANIMAÇÃO\n-AVENTURA\n-FICÇÃO\n-COMÉDIA\n-TERROR"
 alert("Agora com os Quiz:\n" + att +"\n");
 
 
@@ -150,13 +150,13 @@ function terrorQuiz() {
     opcoes.style.display="none"
    
    escolheu = 'Você escolheu o tema de TERROR'
-   aPergunta = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   alt1 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   alt2 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   alt3 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   alt4 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   alt5 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   respostasCertas = [""]
+   aPergunta = ["Pensa num filme Ruim:", "Cuidado com os bueiros:", "Filme Brasileiro:", "Começou com um jogo:", "Qual desses tem continuação?", "Um Aplicativo:", "Alienígenas?", "Um brinquedo assassino:", "Testam a vida pós morte:", "Um grande Clássico:"]
+   alt1 = ["Órfã 2: A Origem", "A Hora do Pesadelo", "Instinto Materno", "O meme do Mal", "Mamãe", "Nós", "Sem Saída", "Chuck", "Além da Morte", "O Mal está la Fora"]
+   alt2 = ["Sorria", "It- A Coisa", "Atividade Paranormal", "Halloween Ends", "O Closet", "A Hora da Sua Morte", "O Exorcista", "Herdeiro", "Espíritos Obscuros", "Tem Alguém na sua Casa"]
+   alt3 = ["Terrifier", "O Grito", "Morto não Fala", "Annabelle", "Marcas da maldição", "O Homem Invisível", "Não! Não Olhe!", "O Último Ritual", "Verdade ou Desafio", "Ninguém sai Vivo"]
+   alt4 = ["A Lenda de Candyman", "O Chamado 3", "Pânico", "Morte. Morte. Morte.", "Escolha ou Morra", "A Freira", "Passageiro 666", "Crocodilos: A morte te espera", "X - A Marca da Morte", "Ouija: Invocando o Mal"]
+   alt5 = ["Invocação do Mal 3", "Fantasmas do Passado", "A Bruxa de Blair", "Corrente do Mal", "Rua do Medo: 1994", "Corra!", "O massacre da Serra Elétrica", "O Jogo do Bunker", "Cuidado com Quem Chama", "O Iluminado"]
+   respostasCertas = ["box[1]","box[2]", "box[3]","box[4]","box[5]","box[2]","box[3]","box[1]","box[1]","box[5]"]
    
     qualEscolheu.innerHTML= escolheu
     setTimeout(function(){escolhida.style.display="block"; botao2.style.display="block"; qualEscolheu.style.display="block"; explicacaoQuiz.style.display="block"; botao1.style.display="block"},500)
