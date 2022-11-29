@@ -40,7 +40,7 @@ function acaoQuiz(){
    
    escolheu = 'Você escolheu o tema de AÇÃO'
    aPergunta = ["Qual das alternativas abaixo não é de AÇÃO:", "Qual desses seria quase que obrigatório assistir:", "Qual desses não se encontra no MCU:", "Nas mãos dele, até uma caneta é uma arma:", "Qual desses não se encaixam com os outros:", "Qual desses é permitido chorar (motivo: filme ser muito bom):", "Rocky Balboa não participa de qual dos filmes abaixo:", "Qual desses nunca foram arqui-inimigos nos filmes:", "Qual provavelmente o orçamento saiu mais caro:", "Qual desses não tem segundo filme:"]
-   imagens = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
+   imagens = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrG_udki5MnvEILWgIevG0yqWGIndvC7COcw&usqp=CAU", "https://br.web.img3.acsta.net/medias/nmedia/18/90/95/77/20122074.jpg", "https://br.web.img3.acsta.net/pictures/19/09/17/19/29/5316438.jpg", "https://br.web.img3.acsta.net/pictures/19/04/03/21/31/0977319.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqkSYxNpg8JuVqrg_UTGdQ5vWOpZWUjH2tRw&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN6_TKYMcgFCMWMssU162bU4c4CFdnim5_5g&usqp=CAU", "https://br.web.img3.acsta.net/medias/nmedia/18/96/60/98/20478737.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDiw9LsM8LQ3YntQCjV0dUiQ79a9FvGnfM7A&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlz1FcCPeGjBEnKVIzucTVErbmgdNgm9KSTA&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOLrEgZ7zrxm32O0pwMGfKgux6EhrzmgRDWQ&usqp=CAU"]
    alt1 = ["O Primeiro Vingador", "Velozes e Furiosos 7", "WandaVision", "Carga Explosiva", "Hitman", "Thor Amor e Trovão", "Rambo", "Batman e Coringa", "Alerta Vermelho", "Doutor Estranho"]
    alt2 = ["Abracadabra", "Agente Oculto",   "Eternos", "Avatar", "Ben10", "Cidade Perdida", "Duro de Matar", "Flash e Mercúrio", "Mad Max (1979)", "Exterminador do Futuro"]
    alt3 = ["#Alive", "Uncharted: Fora do Mapa", "Capitã Marvel", "Velozes e Furiosos 5", "James Bond", "Mulher-Maravilha 1984", "Creed-Nascido para Lutar", "Professor Xavier e Magneto", "Napoleon Dynamite", "Lou"]
@@ -621,9 +621,6 @@ function validacao2() {
      if(Clicados === 0){
             alert("Por favor escolha alguma das seguintes alternativas:");
      }
-}
-function cu() {
-    imgs = []
 }
 
 var bolinhas
