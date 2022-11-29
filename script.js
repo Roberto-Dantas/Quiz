@@ -622,6 +622,9 @@ function validacao2() {
             alert("Por favor escolha alguma das seguintes alternativas:");
      }
 }
+function cu() {
+    imgs = []
+}
 
 var bolinhas
 var respostasFinal
@@ -674,9 +677,10 @@ function colorindo() {
             
             setTimeout(function(){menu.style.transition="1s"; menu.style.backgroundColor="#fff"; palavraQuiz.style.transition="1s"; palavraQuiz.style.color="#E8000D"; testagemBolinha()},1500)
         }
-    }
+        
     filmesCertos(numBaixo)
-    setTimeout(function(){proxima()},2000)
+    }
+    
 }
 function testagemBolinha() {
     if(respostasCertas[aleatorio] === respostasFinal){
@@ -965,6 +969,9 @@ function filmesCertos(num) {
     if(imagens[0] != "1-)"){
         localMovie.style.display= "block"
         movies.src = imagens[num]
-        setTimeout(function(){localMovie.style.display= "none"},2000)
+        setTimeout(function(){localMovie.style.display= "none"; proxima()},2800)
+    }
+    else{
+        setTimeout(function(){proxima()},2200)
     }
 }
