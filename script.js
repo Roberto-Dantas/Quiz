@@ -28,6 +28,7 @@ var escolheu
 var aPergunta
 var alt1, alt2, alt3, alt4, alt5
 var respostasCertas
+var imagens
 var qualAPessoaEscolheu = document.getElementById('qualEscolheu')
 var temas = document.getElementById('escolhida')
 var textinhoExplicativo = document.getElementById('explicacaoQuiz')
@@ -39,6 +40,7 @@ function acaoQuiz(){
    
    escolheu = 'Você escolheu o tema de AÇÃO'
    aPergunta = ["Qual das alternativas abaixo não é de AÇÃO:", "Qual desses seria quase que obrigatório assistir:", "Qual desses não se encontra no MCU:", "Nas mãos dele, até uma caneta é uma arma:", "Qual desses não se encaixam com os outros:", "Qual desses é permitido chorar (motivo: filme ser muito bom):", "Rocky Balboa não participa de qual dos filmes abaixo:", "Qual desses nunca foram arqui-inimigos nos filmes:", "Qual provavelmente o orçamento saiu mais caro:", "Qual desses não tem segundo filme:"]
+   imagens = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
    alt1 = ["O Primeiro Vingador", "Velozes e Furiosos 7", "WandaVision", "Carga Explosiva", "Hitman", "Thor Amor e Trovão", "Rambo", "Batman e Coringa", "Alerta Vermelho", "Doutor Estranho"]
    alt2 = ["Abracadabra", "Agente Oculto",   "Eternos", "Avatar", "Ben10", "Cidade Perdida", "Duro de Matar", "Flash e Mercúrio", "Mad Max (1979)", "Exterminador do Futuro"]
    alt3 = ["#Alive", "Uncharted: Fora do Mapa", "Capitã Marvel", "Velozes e Furiosos 5", "James Bond", "Mulher-Maravilha 1984", "Creed-Nascido para Lutar", "Professor Xavier e Magneto", "Napoleon Dynamite", "Lou"]
@@ -46,15 +48,17 @@ function acaoQuiz(){
    alt5 = ["Clube da Luta", "Viúva Negra", "Aves de Rapina", "Missão Impossível", "Soldado Infernal", "Coração de Ferro", "Ajuste de Contas", "Thor e Loki", "Atividade Paranormal", "Batman"]
    respostasCertas = ["box[2]","box[4]", "box[5]","box[4]","box[2]","box[5]","box[2]","box[2]","box[1]","box[3]"]
    
-    qualEscolheu.innerHTML= escolheu
-    setTimeout(function(){escolhida.style.display="block"; botao2.style.display="block"; qualEscolheu.style.display="block"; explicacaoQuiz.style.display="block"; botao1.style.display="block"},300)
+   qualEscolheu.innerHTML= escolheu
+    setTimeout(function(){escolhida.style.display="block"; botao2.style.display="block"; qualEscolheu.style.display="block"; explicacaoQuiz.style.display="block"; botao1.style.display="block"},500)
+   
     
 }
 function animacaoQuiz(){
    opcoes.style.display="none"
    
    escolheu = 'Você escolheu o tema de ANIMAÇÃO'
-   aPergunta = ["Uma casa que voa:", "Robôs?", "Natal chegando:", "Os Brinquedos tem vida:", "As Hienas são uns dos principais vilões:", "O maior cozinheiro que existe:", "Um vilão-heroi??", "Irmãos gêmeos?", "Idade da Pedra:", "Viajem no tempo:"]
+   aPergunta = ["Uma casa que voa:", "Robôs?", "Natal chegando:", "Os Brinquedos tem vida:", "As Hienas são uns dos principais vilões:", "O maior cozinheiro que existe:", "Um vilão-heroi??", "Irmãos gêmeos?", "Idade da Pedra:", "Viagem no tempo:"]
+   imagens = ["https:encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKHnc9Haqo1W6a_27yKO5k69yxTypSM6WwCA&usqp=CAU", "https:br.web.img2.acsta.net/medias/nmedia/18/91/31/05/20139182.jpg", "https:encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs2qkzhmMrDlIS05UaKtfc6JlqE_5DxSEw1g&usqp=CAU", "https:encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY7MCF1mBjg5gr_9DIxbo17l0TOukVJAT6Yw&usqp=CAU", "https:encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9iPoO5g-4Lc1g-CrgwyLAz-bMEsGU6dWRQQ&usqp=CAU", "https:encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxnhOV0N5-5nCe-ipspmmbtUH6kI2gINmjRQ&usqp=CAU", "https:encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIO1XfuL28Hb8sWr5HBCccSjsAbpOfN__0Ow&usqp=CAU", "https:br.web.img2.acsta.net/pictures/17/03/14/20/37/126690.jpg", "https:encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtwmvRLTvpugrLJ2POJ9p79PlNCmMSPfhatw&usqp=CAU", "https:encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwgAWiS895x_t_BZUe7b4aqYd24TDxpIpF4w&usqp=CAU"]
    alt1 = ["Moana", "Encanto", "Klaus", "Procurando Dory", "Viva – A Vida É uma Festa", "Procurando Nemo", "Universidade Monstros", "Shrek Terceiro", "Os Incríveis", "Madagascar"]
    alt2 = ["Meu Malvado Favorito", "Vida de Inseto", "Luca", "Frozen 2", "Minions 2: A Origem de Gru", "Ratatouille", "Lilo & Stitch", "Gato de Botas", "Os Croods", "Dumbo"]
    alt3 = ["Up - Altas Aventuras", "A Noiva-Cadáver", "Zootopia", "Toy Story 3", "Aviões", "Soul", "Detona Ralph", "A Era do Gelo 4", "A Dama e o Vagabundo", "A Era do Gelo"]
@@ -71,6 +75,7 @@ function aventuraQuiz(){
    
    escolheu = 'Você escolheu o tema de AVENTURA'
    aPergunta = ["Qual desses é uma aventura no espaço?", "Quase que uma aventura de carros:", "Um filme com muitos Easters Eggs:", "Labirintos é com eles:", "Apenas um livro causou tudo isso:", "Um jogo causou toda essa aventura:", "Um filme muito clássico, e obrigatório a todas as idades:", "O personagem principal é conhecido por ser muito baixo:", "Goblins do lado de fora?", "Segundo eles, somos trouxas:"]
+   imagens = ["https:br.web.img3.acsta.net/pictures/16/11/23/21/45/138805.jpg", "https:br.web.img3.acsta.net/pictures/21/04/14/19/06/3385237.jpg", "https:encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCcPkqIQwqA0zuHp3O1lZ9LaOcjU7-9nzRUw&usqp=CAU", "https:encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8_JvGFAzf1rmAQ-8nRMhng03OYSayY_0COw&usqp=CAU", "https:encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfafeIAk32f7FJRBReqO2RIjvH2B07ror-og&usqp=CAU","https:encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWCZYFJemoeBIKzRUnzQr2_TBdIJEctFX6Ig&usqp=CAU","https:encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ7RIwGdjR1TEe-DEfgiYrvVswaEkjWJk4Fg&usqp=CAU", "https:encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQZxuX2VvC4sP_CTBlpOga0IPtlpuSCNKSyA&usqp=CAU", "https:encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPmuswI1pGe8sOH4NDtXL-cVhN9ufJrvQDcA&usqp=CAU", "https:encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBog7JaXeOb70NeP-yzlGLH9EIdPYVBJJFWA&usqp=CAU"]
    alt1 = ["Sonic: O Filme", "Lightyear", "Free Guy", "Liga da Justiça", "Piratas do Caribe", "Jumanji: Próxima Fase", "Venom", "Zathura", "Aquaman", "As Crônicas de Nárnia"]
    alt2 = ["Passageiros", "Mortal Kombat", "Os Croods 2", "Red: Crescer é uma Fera", "Animais Fantásticos", "O Predador: A Caçada", "Alita: Anjo de Combate", "A Bússola de Ouro", "Assassin's Creed", "Tomb Raider"]
    alt3 = ["Cidade Perdida", "DC Liga dos Superpets", "O Chamado da Floresta", "De Volta para o Futuro", "Mogli: Entre dois mundos", "O auto da Comparecida", "O Pequeno Príncipe", "Viajem ao centro da Terra", "Coração de Tinta", "Jack, o Caçador de Gigantes"]
@@ -87,28 +92,13 @@ function comediaQuiz() {
    
    escolheu = 'Você escolheu o tema de COMÉDIA'
    aPergunta = ["Um heroi?", "Dois malucos:", "Mas que filme bom:", "Lição de vida:", "Um grande Clássico:", "Amigos até depois de se casarem:", "O filme é caro só por ter esse ator lá:", "Animais Extintos??", "Varios jogos na vida real:", "Ganhou na loteria:"]
+   imagens = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
    alt1 = ["Gente grande", "Alerta Vermelho", "Um Príncipe em Nova York 2", "Click", "Se Beber, Não Case!", "Todo mundo Quase morto", "Minha Mãe é uma Peça", "A Era do Gelo 3", "Cabras da Peste", "WIFI Ralph"]
    alt2 = ["Deadpool", "O Grinch", "Bons de Bico", "Esqueceram de Mim", "As Branquelas", "Minha Mãe é uma Peça 3", "Vai que Cola 2", "Hotel Transilvânia 3", "Pixels", "Os Salafrários"]
    alt3 = ["Ted", "Zumbilândia", "A Família Addams", "De férias da Família", "O Homem de Toronto", "O Auto da Compadecida", "Tô Ryca", "O Filho do Máskara", "Jungle Cruise", "Até que a Sorte nos Separe"]
    alt4 = ["Férias da Família Johnson", "Debi & Loide 2", "Um Espião e Meio", "Minions 2", "Space Jam: Um Novo Legado", "Gente Grande", "Dolittle", "A Chefinha", "Tudo Bem no Natal Que Vem", "Turma da Mônica: Laços"]
-   alt5 = ["Tudo por um Popstar", "Free Guy", "As Mil Palavras", "Hancock", "O Ditador", "Trolls", "Os Farofeiros", "O Poderoso Chefinho", "Debi & Loide", "Não Olhe para Cima"]
+   alt5 = ["Tudo por um Popstar", "Free Guy", "As Mil Palavras", "Hancock", "O Ditador", "Trolls", "Os Farofeiros", "O Poderoso Chefinho", "Cada Um Tem a Gêmea Que Merece", "Não Olhe para Cima"]
    respostasCertas = ["box[2]","box[4]", "box[5]","box[1]","box[2]","box[4]","box[4]","box[1]","box[2]","box[3]"]
-   
-    qualEscolheu.innerHTML= escolheu
-    setTimeout(function(){escolhida.style.display="block"; botao2.style.display="block"; qualEscolheu.style.display="block"; explicacaoQuiz.style.display="block"; botao1.style.display="block"},500)
-    
-}
-function dramaQuiz() {
-    opcoes.style.display="none"
-   
-   escolheu = 'Você escolheu o tema de DRAMA'
-   aPergunta = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   alt1 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   alt2 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   alt3 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   alt4 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   alt5 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   respostasCertas = [""]
    
     qualEscolheu.innerHTML= escolheu
     setTimeout(function(){escolhida.style.display="block"; botao2.style.display="block"; qualEscolheu.style.display="block"; explicacaoQuiz.style.display="block"; botao1.style.display="block"},500)
@@ -119,6 +109,7 @@ function ficcaoQuiz() {
    
    escolheu = 'Você escolheu o tema de FICÇÃO'
    aPergunta = ["Toda vez que morre, o mundo reseta:", "Determinado a matar a personagem principal:", "Cuidado que a Lua esta vindo em direção a Terra:", "Qual desses não é um filme clássico para assistir:", "Clonagem existe:", "A história principal se inicia num contrabando de drogas:", "Robôs podem se transformar em carros:", "Robô acaba criando vida, personalidade, e uma alma?", "O principal acaba sendo puxado a um mundo cibernético:", "Qual dos filmes, animais selvagens se tornam mil vezes maior?"]
+   imagens = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
    alt1 = ["A Chegada", "WALL·E", "Oblivion", "Aniquilação", "Chappie", "MIB³ - Homens de Preto 3", "Jogos Vorazes", "Pantera Negra", "Não! Não Olhe!", "Interestelar"]
    alt2 = ["Distrito 9", "A.I. - Inteligência Artificial", "Jogador Nº 1", "Jurassic Park", "Projeto Gemini", "Perdido em Marte", "Mad Max: Estrada da Fúria", "Matrix Resurrections", "Tron - O Legado", "Alita: Anjo de Combate"]
    alt3 = ["Planeta dos Macacos", "O Exterminador do Futuro", "Moonfall", "De Volta Para o Futuro", "Independence Day", "Godzilla vs Kong", "O Dia Depois de Amanhã", "Star Wars: O Despertar da Força", "John Carter - Entre Dois Mundos", "A 5ª Onda"]
@@ -135,6 +126,24 @@ function romanceQuiz() {
    
    escolheu = 'Você escolheu o tema de ROMANCE'
    aPergunta = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
+   imagens = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
+   alt1 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
+   alt2 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
+   alt3 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
+   alt4 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
+   alt5 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
+   respostasCertas = [""]
+   
+    qualEscolheu.innerHTML= escolheu
+    setTimeout(function(){escolhida.style.display="block"; botao2.style.display="block"; qualEscolheu.style.display="block"; explicacaoQuiz.style.display="block"; botao1.style.display="block"},500)
+    
+}
+function dramaQuiz() {
+    opcoes.style.display="none"
+   
+   escolheu = 'Você escolheu o tema de DRAMA'
+   aPergunta = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
+   imagens = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
    alt1 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
    alt2 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
    alt3 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
@@ -151,6 +160,7 @@ function terrorQuiz() {
    
    escolheu = 'Você escolheu o tema de TERROR'
    aPergunta = ["Pensa num filme Ruim:", "Cuidado com os bueiros:", "Filme Brasileiro:", "Começou com um jogo:", "Qual desses tem continuação?", "Um Aplicativo:", "Alienígenas?", "Um brinquedo assassino:", "Testam a vida pós morte:", "Um grande Clássico:"]
+   imagens = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
    alt1 = ["Órfã 2: A Origem", "A Hora do Pesadelo", "Instinto Materno", "O meme do Mal", "Mamãe", "Nós", "Sem Saída", "Chuck", "Além da Morte", "O Mal está la Fora"]
    alt2 = ["Sorria", "It- A Coisa", "Atividade Paranormal", "Halloween Ends", "O Closet", "A Hora da Sua Morte", "O Exorcista", "Herdeiro", "Espíritos Obscuros", "Tem Alguém na sua Casa"]
    alt3 = ["Terrifier", "O Grito", "Morto não Fala", "Annabelle", "Marcas da maldição", "O Homem Invisível", "Não! Não Olhe!", "O Último Ritual", "Verdade ou Desafio", "Ninguém sai Vivo"]
@@ -167,6 +177,7 @@ function thrillerQuiz() {
    
    escolheu = 'Você escolheu o tema de THRILLER'
    aPergunta = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
+   imagens = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
    alt1 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
    alt2 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
    alt3 = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
@@ -225,7 +236,6 @@ function proxima() {
     validacaoAleatorio()
     sobrePerguntas[as] = aleatorio
     
-    
     for(var kol = 0; kol <=4; kol++){
         validacaoAleatorioAlternativas()
         al[kol] = ordemAlternativas
@@ -247,7 +257,8 @@ function proxima() {
     box5.style.display="none";
     alternativa5.style.display="none"
     botaoProxima.style.display="none";
-        
+    
+    
     perguntasAleatorias()
     
     box1.checked = 0
@@ -261,11 +272,15 @@ function proxima() {
     perguntaTexto.style.display="block";
     setTimeout(function(){box1.style.display="block"; alternativa1.style.display="block"; setTimeout(function(){box2.style.display="block"; alternativa2.style.display="block"; setTimeout(function(){box3.style.display="block"; alternativa3.style.display="block"; setTimeout(function(){box4.style.display="block"; alternativa4.style.display="block"; setTimeout(function(){box5.style.display="block"; alternativa5.style.display="block"; setTimeout(function(){botaoProxima.style.display="block";},700)},400)},400)},400)},400)},600)
     
-   palavraAssina()
-   
+    certoOuErrado(aleatorio)
     }
 }
-
+var numBaixo
+function certoOuErrado(num) {
+    numBaixo = num
+    palavraAssina()
+    
+}
 
 function validacaoAleatorio() {
    mini = 0
@@ -357,8 +372,6 @@ function perguntasAleatorias() {
     let rou = 0
     
     
-    
-    console.log(sobrePerguntas);
     while(sobe != 5){
         rou++
         agoraSimAlternativas = "alternativa" + rou
@@ -645,7 +658,7 @@ function colorindo() {
             palavraQuiz.style.transition="1s"
             palavraQuiz.style.color="#fff"
               setTimeout(function(){menu.style.transition="1s"; menu.style.backgroundColor="#fff"; palavraQuiz.style.transition="1s"; palavraQuiz.style.color="#E8000D"; testagemBolinha()},1500)
-            
+     
         }else{
             
             testagem()
@@ -662,6 +675,7 @@ function colorindo() {
             setTimeout(function(){menu.style.transition="1s"; menu.style.backgroundColor="#fff"; palavraQuiz.style.transition="1s"; palavraQuiz.style.color="#E8000D"; testagemBolinha()},1500)
         }
     }
+    filmesCertos(numBaixo)
     setTimeout(function(){proxima()},2000)
 }
 function testagemBolinha() {
@@ -942,4 +956,15 @@ function cliqueFinal() {
     botaoReiniciarTudo.style.fontWeight= "600"
     setTimeout(function(){botaoReiniciarTudo.style.display="none"; falaFinal.style.display="none"; notaFinal.style.display="none"; textoFinal.style.display="none"; oFinal.style.display="none"; setTimeout(function() {opcoes.style.display="block"; },1500)},500)
     
+}
+function filmesCertos(num) {
+    const localMovie = document.querySelector('.filmes')
+    const movies = document.querySelector('.oFilme')
+    
+    
+    if(imagens[0] != "1-)"){
+        localMovie.style.display= "block"
+        movies.src = imagens[num]
+        setTimeout(function(){localMovie.style.display= "none"},2000)
+    }
 }
