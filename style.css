@@ -92,6 +92,23 @@ body{
     display: none;
     
 }
+
+.filmes{
+    margin-top: 3%;
+    margin-left: 9%; 
+    float: left;
+    padding: 8px;
+    border-radius: 15px;
+    background: rgb(255, 255, 255, 0.8);
+    display: none;
+    transition: 1s linear;
+}
+.oFilme{
+    background-size: cover;
+    height: 175px;
+    width: 135px;   
+    box-shadow: 2px 2px 50px #000;
+}
 #conteudoEscrito{
     background: rgb(255, 255, 255, 0.8);
     height: 425px;
