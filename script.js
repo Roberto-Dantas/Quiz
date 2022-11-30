@@ -160,8 +160,8 @@ function terrorQuiz() {
    
    escolheu = 'Você escolheu o tema de TERROR'
    aPergunta = ["Pensa num filme Ruim:", "Cuidado com os bueiros:", "Filme Brasileiro:", "Começou com um jogo:", "Qual desses tem continuação?", "Um Aplicativo:", "Alienígenas?", "Um brinquedo assassino:", "Testam a vida pós morte:", "Um grande Clássico:"]
-   imagens = ["1-)", "2-)", "3-)", "4-)", "5-)", "6-)", "7-)", "8-)", "9-)", "10-)"]
-   alt1 = ["Órfã 2: A Origem", "A Hora do Pesadelo", "Instinto Materno", "O meme do Mal", "Mamãe", "Nós", "Sem Saída", "Chuck", "Além da Morte", "O Mal está la Fora"]
+   imagens = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvDa2Pscl_sLVWH3Fs5mHX8DJQ1_YmJxSdMQ&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWxr7GM7cNEV_XSrNOvge-YIdrGyWQCCOTlg&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiIIT8v8T7NXlX4JUBi7DoYOOPQKHClT7_MQ&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE---JkTWUbLQDVViMN_j0Eltpz2P-p3CRSg&usqp=CAU", "https://br.web.img3.acsta.net/pictures/21/06/28/15/53/0645594.jpg", "https://br.web.img3.acsta.net/pictures/19/10/10/09/23/5441269.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX0y78JtKW2K0r2qtByPrm2UWC5_bfeWuSmQ&usqp=CAU", "https://br.web.img3.acsta.net/pictures/17/10/20/20/01/0738714.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmyRnpPNU1WCb74NbbGoVFDVFbbphkhmwSpg&usqp=CAU", "https://br.web.img3.acsta.net/pictures/14/10/10/19/21/152595.jpg"]
+   alt1 = ["Órfã 2: A Origem", "A Hora do Pesadelo", "Instinto Materno", "O meme do Mal", "Mamãe", "Nós", "Sem Saída", "Chucky", "Além da Morte", "O Mal está la Fora"]
    alt2 = ["Sorria", "It- A Coisa", "Atividade Paranormal", "Halloween Ends", "O Closet", "A Hora da Sua Morte", "O Exorcista", "Herdeiro", "Espíritos Obscuros", "Tem Alguém na sua Casa"]
    alt3 = ["Terrifier", "O Grito", "Morto não Fala", "Annabelle", "Marcas da maldição", "O Homem Invisível", "Não! Não Olhe!", "O Último Ritual", "Verdade ou Desafio", "Ninguém sai Vivo"]
    alt4 = ["A Lenda de Candyman", "O Chamado 3", "Pânico", "Morte. Morte. Morte.", "Escolha ou Morra", "A Freira", "Passageiro 666", "Crocodilos: A morte te espera", "X - A Marca da Morte", "Ouija: Invocando o Mal"]
@@ -225,8 +225,15 @@ function proxima() {
     as = as +1
     i = i +1
     al = ["","","","",""]
+    const oTemaEscolhido = escolheu.replace("Você escolheu o tema de ","")
     
-    
+    if(aPergunta[0] === '1-)'){
+        
+        voltar()
+        
+        alert("Ainda não esta funcionando o Tema: " + oTemaEscolhido +"\nPor favor escolha outro :)");
+    }
+    else{
     if(i === 10){
          
           telaFinal()
@@ -273,6 +280,7 @@ function proxima() {
     setTimeout(function(){box1.style.display="block"; alternativa1.style.display="block"; setTimeout(function(){box2.style.display="block"; alternativa2.style.display="block"; setTimeout(function(){box3.style.display="block"; alternativa3.style.display="block"; setTimeout(function(){box4.style.display="block"; alternativa4.style.display="block"; setTimeout(function(){box5.style.display="block"; alternativa5.style.display="block"; setTimeout(function(){botaoProxima.style.display="block";},700)},400)},400)},400)},400)},600)
     
     certoOuErrado(aleatorio)
+    }
     }
 }
 var numBaixo
@@ -895,8 +903,8 @@ var chamando2 = document.getElementById('notaFinal')
 var chamando3 = document.getElementById('textoFinal')
 var clique2 = document.getElementById('botaoReiniciarTudo')
 
+    
 function telaFinal() {
-    let oTemaEscolhido = escolheu.replace("Você escolheu o tema de ","")
     
     perguntaTexto.style.display="none"
     box1.style.display="none"
@@ -936,6 +944,7 @@ function telaFinal() {
     }
 }
 function cliqueFinal() {
+    soPrimeiro = true
     jo = ["","","","","","","","","",""]
     sobrePerguntas = ["","","","","","","","","",""]
     pontuacaoFinal = 0
@@ -958,6 +967,8 @@ function cliqueFinal() {
     setTimeout(function(){botaoReiniciarTudo.style.display="none"; falaFinal.style.display="none"; notaFinal.style.display="none"; textoFinal.style.display="none"; oFinal.style.display="none"; setTimeout(function() {opcoes.style.display="block"; },1500)},500)
     
 }
+var soPrimeiro = true
+
 function filmesCertos(num) {
     const localMovie = document.querySelector('.filmes')
     const movies = document.querySelector('.oFilme')
@@ -966,9 +977,23 @@ function filmesCertos(num) {
     if(imagens[0] != "1-)"){
         localMovie.style.display= "block"
         movies.src = imagens[num]
-        setTimeout(function(){localMovie.style.display= "none"; proxima()},2800)
-    }
-    else{
-        setTimeout(function(){proxima()},2200)
+        
+        
+        movies.onload = function(){
+             setTimeout(function(){localMovie.style.display= "none"; proxima()},1500)
+        }
+        movies.onerror = function () {
+            alert("Sem Internet para carregar as imagens...");
+            setTimeout(function(){localMovie.style.display= "none"; proxima()},1000)
+        }
+        
+    }else{
+        if(soPrimeiro){
+            alert("Não há imagens nesse tema ainda :(");
+            setTimeout(function(){localMovie.style.display= "none"; proxima()},1000)
+            soPrimeiro = false
+        }else{
+            setTimeout(function(){localMovie.style.display= "none"; proxima()},1000)
+        }
     }
 }
