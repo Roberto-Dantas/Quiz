@@ -197,6 +197,7 @@ function iniciar(){
     i = i -1
     proxima()
 }
+
 function voltar(){
     escolhida.style.display='none'
     setTimeout(function(){opcoes.style.display="block"},500)
@@ -220,12 +221,14 @@ var altern5 = document.getElementById('box5')
 var sobrePerguntas 
 sobrePerguntas = ["","","","","","","","","",""]
 var al
-
+let oTemaEscolhido
+var numeroC = []
+var joo = -1
 function proxima() {
     as = as +1
     i = i +1
     al = ["","","","",""]
-    const oTemaEscolhido = escolheu.replace("Você escolheu o tema de ","")
+    oTemaEscolhido = escolheu.replace("Você escolheu o tema de ","")
     
     if(aPergunta[0] === '1-)'){
         
@@ -267,19 +270,23 @@ function proxima() {
     
     
     perguntasAleatorias()
-    
+   joo++
+    numeroC[joo] = aleatorio
     box1.checked = 0
     box2.checked = 0
     box3.checked = 0
     box4.checked = 0
     box5.checked = 0
     
+    
     pontuacao.style.display="block"
     linhaPontucao.style.display="block";
     perguntaTexto.style.display="block";
     setTimeout(function(){box1.style.display="block"; alternativa1.style.display="block"; setTimeout(function(){box2.style.display="block"; alternativa2.style.display="block"; setTimeout(function(){box3.style.display="block"; alternativa3.style.display="block"; setTimeout(function(){box4.style.display="block"; alternativa4.style.display="block"; setTimeout(function(){box5.style.display="block"; alternativa5.style.display="block"; setTimeout(function(){botaoProxima.style.display="block";},700)},400)},400)},400)},400)},600)
     
-    certoOuErrado(aleatorio)
+   
+   certoOuErrado(numeroC[joo])
+    
     }
     }
 }
@@ -654,6 +661,8 @@ function colorindo() {
     respostasFinal = "box[" + finalIncluido + "]"
     
     if(chegou === 1){
+        filmesCertos(numBaixo)
+        
         if(respostasCertas[aleatorio] === respostasFinal){
             pontuacaoFinal = pontuacaoFinal +1
             
@@ -683,12 +692,18 @@ function colorindo() {
             setTimeout(function(){menu.style.transition="1s"; menu.style.backgroundColor="#fff"; palavraQuiz.style.transition="1s"; palavraQuiz.style.color="#E8000D"; testagemBolinha()},1500)
         }
         
-    filmesCertos(numBaixo)
+    
     }
     
 }
+var pintaCerto
+var aj = -1
 function testagemBolinha() {
-    if(respostasCertas[aleatorio] === respostasFinal){
+    aj++
+    
+        pintaCerto= numeroC[aj]
+ 
+    if(respostasCertas[pintaCerto] === respostasFinal){
         if(bolinhas === "p1") {
             p1.style.backgroundColor="green";
         }
@@ -755,7 +770,8 @@ function testagemBolinha() {
      }
 }
 function testagem() {
-     let aAlternativaEscolhida = "simAlternativa" + caixaClicada 
+     let aAlternativaEscolhida = "simAlternativa" + caixaClicada
+     
      
      if(respostasCertas[aleatorio] === respostasFinal){
         
@@ -945,12 +961,16 @@ function telaFinal() {
 }
 function cliqueFinal() {
     soPrimeiro = true
+    soPrimeiro2 = true
     jo = ["","","","","","","","","",""]
     sobrePerguntas = ["","","","","","","","","",""]
+    numeroC = ["","","","","","","","","",""]
     pontuacaoFinal = 0
+    joo = -1
     chegou = 0
     as = -1
     i= 0
+    aj = -1
     
     p1.style.backgroundColor="rgb(255, 255, 255, 0.0)"; 
     p2.style.backgroundColor="rgb(255, 255, 255, 0.0)"; 
@@ -968,32 +988,39 @@ function cliqueFinal() {
     
 }
 var soPrimeiro = true
+var soPrimeiro2 = true
 
 function filmesCertos(num) {
     const localMovie = document.querySelector('.filmes')
     const movies = document.querySelector('.oFilme')
     
     
+    
     if(imagens[0] != "1-)"){
-        localMovie.style.display= "block"
         movies.src = imagens[num]
         
-        
         movies.onload = function(){
+             localMovie.style.display= "block"
              setTimeout(function(){localMovie.style.display= "none"; proxima()},1500)
         }
         movies.onerror = function () {
-            alert("Sem Internet para carregar as imagens...");
-            setTimeout(function(){localMovie.style.display= "none"; proxima()},1000)
+            console.log("cu");
+            if(soPrimeiro2){
+                localMovie.style.display= "none"; 
+                alert("Sem Internet para carregar as imagens...");
+                soPrimeiro2 = false
+                setTimeout(function(){proxima()},1500)
+            }else{
+               setTimeout(proxima(),2000)
+            }
+            
         }
-        
     }else{
         if(soPrimeiro){
-            alert("Não há imagens nesse tema ainda :(");
-            setTimeout(function(){localMovie.style.display= "none"; proxima()},1000)
+            alert("Não há imagens nesse tema ainda, então continuaremos sem elas...");
             soPrimeiro = false
-        }else{
-            setTimeout(function(){localMovie.style.display= "none"; proxima()},1000)
         }
+        setTimeout(function(){proxima()},1500)
+        
     }
 }
